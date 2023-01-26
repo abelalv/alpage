@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title> Introducción a la álgebra lineal Computacional – section2</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Introducción a la álgebra lineal Computacional</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="./index.html">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html">About</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./section1.html">Introducción a Phyton parte I</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./section2.html" aria-current="page">Gráficas</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./section3.html">Espacios vectoriales</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#gráficas" id="toc-gráficas" class="nav-link active" data-scroll-target="#gráficas">Gráficas</a>
+  <ul class="collapse">
+  <li><a href="#gráficas-básicas" id="toc-gráficas-básicas" class="nav-link" data-scroll-target="#gráficas-básicas">Gráficas básicas</a></li>
+  </ul></li>
+  <li><a href="#ejemplo-de-graficar-un-finción-ysin2x-para--2pileq-xleq-2pi" id="toc-ejemplo-de-graficar-un-finción-ysin2x-para--2pileq-xleq-2pi" class="nav-link" data-scroll-target="#ejemplo-de-graficar-un-finción-ysin2x-para--2pileq-xleq-2pi">Ejemplo de graficar un finción <span class="math inline">\(y=\sin^2(x)\)</span> para <span class="math inline">\(-2\pi\leq x\leq 2\pi\)</span></a></li>
+  <li><a href="#algunos-matplotlib" id="toc-algunos-matplotlib" class="nav-link" data-scroll-target="#algunos-matplotlib">Algunos Matplotlib</a></li>
+  <li><a href="#tipos-de-línea" id="toc-tipos-de-línea" class="nav-link" data-scroll-target="#tipos-de-línea">tipos de línea</a></li>
+  <li><a href="#puntos-límites" id="toc-puntos-límites" class="nav-link" data-scroll-target="#puntos-límites">Puntos límites</a></li>
+  <li><a href="#algunos-ejemplos" id="toc-algunos-ejemplos" class="nav-link" data-scroll-target="#algunos-ejemplos">Algunos ejemplos</a></li>
+  <li><a href="#gráficas-en-coordenadas-polares" id="toc-gráficas-en-coordenadas-polares" class="nav-link" data-scroll-target="#gráficas-en-coordenadas-polares">Gráficas en coordenadas polares</a></li>
+  <li><a href="#histogrmas" id="toc-histogrmas" class="nav-link" data-scroll-target="#histogrmas">Histogrmas</a></li>
+  <li><a href="#animaciones" id="toc-animaciones" class="nav-link" data-scroll-target="#animaciones">Animaciones</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="gráficas" class="level1">
+<h1>Gráficas</h1>
+<p>Una de la parte más importante en la programación cientíica son las graficas que podemos producir con nuestros algoritmos. En este aparte daremos una pequeña introducción a este tema usando dos librerias: matplotlib y numpy para importar estas librerías usamos</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span>  numpy <span class="im">as</span> np</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<section id="gráficas-básicas" class="level2">
+<h2 class="anchored" data-anchor-id="gráficas-básicas">Gráficas básicas</h2>
+<div class="cell" data-outputid="f21c9c7e-8efa-4e6a-bbda-49fbd17673ad">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>ax<span class="op">=</span>[<span class="fl">0.</span>,<span class="fl">0.5</span>,<span class="fl">1.0</span>,<span class="fl">1.5</span>,<span class="fl">2.0</span>,<span class="fl">2.5</span>,<span class="fl">3.0</span>]</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>by<span class="op">=</span>[<span class="fl">0.0</span>,<span class="fl">0.25</span>,<span class="fl">1.0</span>,<span class="fl">2.25</span>,<span class="fl">4.0</span>,<span class="fl">6.25</span>,<span class="fl">9.0</span>]</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>plt.plot(ax,by)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="section2_files/figure-html/cell-3-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-outputid="d01b1182-fbdb-471f-9495-4d4b2ac1e25a">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>ax, ay <span class="op">=</span> [], []</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">100</span>):</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>    ax.append(random.random())</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>    ay.append(random.random())</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>plt.scatter(ax, ay)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'plot.png'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="section2_files/figure-html/cell-4-output-1.png" class="img-fluid"></p>
+</div>
+<div class="cell-output cell-output-display">
+<pre><code>&lt;Figure size 432x288 with 0 Axes&gt;</code></pre>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>para guardas estas gráficas podemos usar los siguientes comando</p>
+<div class="cell" data-outputid="570eb406-ebb8-47e5-aac4-584353be216b">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'plot.pdf'</span>)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>plt.savefig(<span class="st">'plot.eps'</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<pre><code>&lt;Figure size 432x288 with 0 Axes&gt;</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="ejemplo-de-graficar-un-finción-ysin2x-para--2pileq-xleq-2pi" class="level1">
+<h1>Ejemplo de graficar un finción <span class="math inline">\(y=\sin^2(x)\)</span> para <span class="math inline">\(-2\pi\leq x\leq 2\pi\)</span></h1>
+<p>Tmamos un aprtición equiespaciada de espacio <span class="math inline">\(\Delta x\)</span> con $ n $ puntos, de esta forma querermos gráficas las parejas <span class="math inline">\(y_i=\sin^2(x_i)\)</span> para <span class="math inline">\(i=0,\dots,n-1\)</span></p>
+<div class="cell" data-outputid="74590d02-c0d1-4c61-c36c-ec494d3f3760">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>xmin,xmax<span class="op">=-</span><span class="fl">2.</span><span class="op">*</span>math.pi,<span class="fl">2.</span><span class="op">*</span>math.pi</span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a>n<span class="op">=</span> <span class="dv">100</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>[<span class="fl">0.</span>]<span class="op">*</span><span class="dv">100</span> <span class="co"># crea los vectores de n elementos </span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>y<span class="op">=</span>[<span class="fl">0.</span>]<span class="op">*</span><span class="dv">100</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>dx<span class="op">=</span>(xmax<span class="op">-</span>xmin)<span class="op">/</span>(n<span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>    x[i]<span class="op">=</span>xmin<span class="op">+</span>i<span class="op">*</span>dx</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>    y[i]<span class="op">=</span>math.sin(x[i])<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>plt.plot(x,y)</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>plt.show()</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="section2_files/figure-html/cell-7-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Ahora vamso a realizar la misma gráfica usando vectorización</p>
+<div class="cell" data-outputid="d63d8ae9-6818-41b2-9de8-1062a30c4fd5" data-executioninfo="{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1644507600964,&quot;user_tz&quot;:300,&quot;elapsed&quot;:604,&quot;user&quot;:{&quot;displayName&quot;:&quot;Abel Alvarez Bustos&quot;,&quot;photoUrl&quot;:&quot;https://lh3.googleusercontent.com/a/default-user=s64&quot;,&quot;userId&quot;:&quot;04726289280755598660&quot;}}" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt </span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>n<span class="op">=</span><span class="dv">1000</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>xmin,xmax <span class="op">=-</span><span class="fl">2.0</span><span class="op">*</span>np.pi,<span class="fl">2.0</span><span class="op">*</span>np.pi</span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>np.linspace(xmin,xmax,n)</span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>y<span class="op">=</span>np.sin(x)<span class="op">**</span><span class="dv">2</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>plt.plot(x,y)</span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="section2_files/figure-html/cell-8-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Como usar la vectorización con tuplas</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>w<span class="op">=</span>[<span class="fl">1.0</span>, <span class="fl">2.0</span>,<span class="fl">3.0</span>,<span class="fl">4.0</span>]</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>w<span class="op">=</span>w<span class="op">*</span><span class="dv">2</span> <span class="co"># recuerde que aqui dulica la lista</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>z<span class="op">=</span>np.array(w)</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>z<span class="op">=</span><span class="dv">2</span><span class="op">*</span>z <span class="co"># aqui multiplica cada elemento de z por 2</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Ahora miremos la siguiente gráfica</p>
+<p><span class="math display">\[f(x)=\frac{\sin x}{x}.\]</span></p>
+<div class="cell" data-outputid="1cd8f736-8d15-4974-8217-5ba64c317fc7">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>n <span class="op">=</span> <span class="dv">1001</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>xmin, xmax <span class="op">=</span> <span class="op">-</span><span class="fl">2.0</span><span class="op">*</span>np.pi, <span class="fl">2.0</span><span class="op">*</span>np.pi</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>x<span class="op">=</span>np.linspace(xmin,xmax,n)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>y<span class="op">=</span>np.sin(x)<span class="op">/</span>x</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a>plt.plot(x,y)</span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>C:\Users\portatil\AppData\Local\Temp/ipykernel_11736/1880265921.py:6: RuntimeWarning: invalid value encountered in true_divide
+  y=np.sin(x)/x</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="section2_files/figure-html/cell-10-output-2.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Note como x toma el valor de cero toma el valor NaN y lo ignora. Además presenta un mensaje del hecho</p>
+<ul>
+<li>Labels, legends y resumenes Para gráfica legends y labels hacemos lo siguiente</li>
+</ul>
+<div class="cell" data-outputid="1650978c-7a92-4941-c7e7-8055bf66d59d">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>plt.plot(x,y,label<span class="op">=</span><span class="st">'sin^2(x)'</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="section2_files/figure-html/cell-11-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<p>Por defecto la localización queda en el mejor lugar pero las podemos modificar con la siguiente tabla</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>String</th>
+<th>integer</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>‘best’</td>
+<td>0</td>
+</tr>
+<tr class="even">
+<td>‘upper rigth’</td>
+<td>1</td>
+</tr>
+<tr class="odd">
+<td>‘upper ledft’</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>‘lower left’</td>
+<td>3</td>
+</tr>
+<tr class="odd">
+<td>‘lowe right’</td>
+<td>4</td>
+</tr>
+<tr class="even">
+<td>‘right’</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>‘center left’</td>
+<td>6</td>
+</tr>
+<tr class="even">
+<td>‘center rigth’</td>
+<td>7</td>
+</tr>
+<tr class="odd">
+<td>‘lower center’</td>
+<td>8</td>
+</tr>
+<tr class="even">
+<td>‘upper center’</td>
+<td>9</td>
+</tr>
+<tr class="odd">
+<td>‘center’</td>
+<td>10</td>
+</tr>
+</tbody>
+</table>
+<div class="cell" data-outputid="cefdea45-2fa4-4fca-befc-92bf48ee3969">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>plt.plot(x, y, label<span class="op">=</span><span class="st">'$sin^2(x)$'</span>) <span class="co"># note que aquí colocamos los simbilos $$ para que se pueda inicializar el modo latex</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="dv">10</span>)</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="section2_files/figure-html/cell-12-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-outputid="0258f58a-274f-4dcd-ad9d-54be10273080">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span>np.pi<span class="op">/</span><span class="dv">2</span>, np.pi<span class="op">/</span><span class="dv">2</span>, <span class="dv">31</span>)</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.cos(x)<span class="op">**</span><span class="dv">3</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 1) remove points where y &gt; 0.7</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>x2 <span class="op">=</span> x[y <span class="op">&lt;=</span> <span class="fl">0.7</span>]</span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>y2 <span class="op">=</span> y[y <span class="op">&lt;=</span> <span class="fl">0.7</span>]</span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-12"><a href="#cb15-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 2) mask points where y &gt; 0.7</span></span>
+<span id="cb15-13"><a href="#cb15-13" aria-hidden="true" tabindex="-1"></a>y3 <span class="op">=</span> np.ma.masked_where(y <span class="op">&gt;</span> <span class="fl">0.7</span>, y)</span>
+<span id="cb15-14"><a href="#cb15-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-15"><a href="#cb15-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 3) set to NaN where y &gt; 0.7</span></span>
+<span id="cb15-16"><a href="#cb15-16" aria-hidden="true" tabindex="-1"></a>y4 <span class="op">=</span> y.copy()</span>
+<span id="cb15-17"><a href="#cb15-17" aria-hidden="true" tabindex="-1"></a>y4[y3 <span class="op">&gt;</span> <span class="fl">0.7</span>] <span class="op">=</span> np.nan</span>
+<span id="cb15-18"><a href="#cb15-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-19"><a href="#cb15-19" aria-hidden="true" tabindex="-1"></a>plt.plot(x<span class="op">*</span><span class="fl">0.1</span>, y, <span class="st">'o-'</span>, color<span class="op">=</span><span class="st">'lightgrey'</span>, label<span class="op">=</span><span class="st">'No mask'</span>)</span>
+<span id="cb15-20"><a href="#cb15-20" aria-hidden="true" tabindex="-1"></a>plt.plot(x2<span class="op">*</span><span class="fl">0.4</span>, y2, <span class="st">'o-'</span>, label<span class="op">=</span><span class="st">'Points removed'</span>)</span>
+<span id="cb15-21"><a href="#cb15-21" aria-hidden="true" tabindex="-1"></a>plt.plot(x<span class="op">*</span><span class="fl">0.7</span>, y3, <span class="st">'o-'</span>, label<span class="op">=</span><span class="st">'Masked values'</span>)</span>
+<span id="cb15-22"><a href="#cb15-22" aria-hidden="true" tabindex="-1"></a>plt.plot(x<span class="op">*</span><span class="fl">1.0</span>, y4, <span class="st">'o-'</span>, label<span class="op">=</span><span class="st">'NaN values'</span>)</span>
+<span id="cb15-23"><a href="#cb15-23" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb15-24"><a href="#cb15-24" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'Masked and NaN data'</span>)</span>
+<span id="cb15-25"><a href="#cb15-25" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="section2_files/figure-html/cell-13-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="algunos-matplotlib" class="level1">
+<h1>Algunos Matplotlib</h1>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Código</th>
+<th>Marca</th>
+<th>Descripción</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(.\)</span></td>
+<td><span class="math inline">\(.\)</span></td>
+<td>Punto</td>
+</tr>
+<tr class="even">
+<td>O</td>
+<td><span class="math inline">\(o\)</span></td>
+<td>circulo</td>
+</tr>
+<tr class="odd">
+<td>+</td>
+<td><span class="math inline">\(+\)</span></td>
+<td>mas</td>
+</tr>
+<tr class="even">
+<td>X</td>
+<td><span class="math inline">\(\times\)</span></td>
+<td>cruz</td>
+</tr>
+<tr class="odd">
+<td>D</td>
+<td><span class="math inline">\(\diamond\)</span></td>
+<td>diamante</td>
+</tr>
+<tr class="even">
+<td>V</td>
+<td><span class="math inline">\(\nabla\)</span></td>
+<td>Nabla</td>
+</tr>
+<tr class="odd">
+<td>^</td>
+<td><span class="math inline">\(\Delta\)</span></td>
+<td>Nabla</td>
+</tr>
+<tr class="even">
+<td>S</td>
+<td><span class="math inline">\(\square\)</span></td>
+<td>cuadrado</td>
+</tr>
+<tr class="odd">
+<td>*</td>
+<td><span class="math inline">\(\star\)</span></td>
+<td>extrella</td>
+</tr>
+</tbody>
+</table>
+<p># Tabla de colores</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Color básico</th>
+<th>Tabla de colores</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>b=blue</td>
+<td>tab:blue</td>
+</tr>
+<tr class="even">
+<td>g=green</td>
+<td>tab:orange</td>
+</tr>
+<tr class="odd">
+<td>r=red</td>
+<td>tab:green</td>
+</tr>
+<tr class="even">
+<td>c=cyan</td>
+<td>tab:red</td>
+</tr>
+<tr class="odd">
+<td>m= magenta</td>
+<td>tab:purple</td>
+</tr>
+<tr class="even">
+<td>y=yellow</td>
+<td>tab:brown</td>
+</tr>
+<tr class="odd">
+<td>k=black</td>
+<td>tab:pink</td>
+</tr>
+<tr class="even">
+<td>w=white</td>
+<td>tab:gray</td>
+</tr>
+<tr class="odd">
+<td>.</td>
+<td>tab:olive</td>
+</tr>
+<tr class="even">
+<td>.</td>
+<td>tab:cyan</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="tipos-de-línea" class="level1">
+<h1>tipos de línea</h1>
+<table class="table">
+<thead>
+<tr class="header">
+<th>Código</th>
+<th>Tipo de línea</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>-</td>
+<td>Solida</td>
+</tr>
+<tr class="even">
+<td>–</td>
+<td>a trozos</td>
+</tr>
+<tr class="odd">
+<td>:</td>
+<td>punteada</td>
+</tr>
+</tbody>
+</table>
+<p>-.</p>
+<p>Para mas caracteristicas <a href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html">matplotlib</a></p>
+<div class="cell" data-outputid="bbcd0240-2275-4e6d-dc6a-76635cb95c4e">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="fl">0.1</span>, <span class="fl">1.</span>, <span class="dv">100</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>yi <span class="op">=</span> <span class="fl">1.</span> <span class="op">/</span> x</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>ye <span class="op">=</span> <span class="fl">10.</span> <span class="op">*</span> np.exp(<span class="op">-</span><span class="dv">2</span> <span class="op">*</span> x)</span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>plt.plot(x, yi, color<span class="op">=</span><span class="st">'r'</span>, linestyle<span class="op">=</span><span class="st">':'</span>, linewidth<span class="op">=</span><span class="fl">4.</span>)</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>plt.plot(x, ye, color<span class="op">=</span><span class="st">'m'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, linewidth<span class="op">=</span><span class="fl">2.</span>)</span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="section2_files/figure-html/cell-14-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="puntos-límites" class="level1">
+<h1>Puntos límites</h1>
+<p>Los límites de una gráfica se puede reconfigurar usando los comandos</p>
+<blockquote class="blockquote">
+<p>plt.xlim(x_initial,x_final)</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>plt.ylim(y_initial,y_final)</p>
+</blockquote>
+<div class="cell" data-outputid="3122c41a-40fe-4ebc-9f05-8f8771f68c06">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="dv">2</span>, <span class="dv">1000</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>f <span class="op">=</span> t <span class="op">*</span> np.exp(t <span class="op">+</span> np.sin(<span class="dv">20</span><span class="op">*</span>t))</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>plt.plot(t, f)</span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>plt.xlim(<span class="fl">1.5</span>, <span class="fl">1.8</span>)</span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>plt.ylim(<span class="dv">0</span>, <span class="dv">30</span>)</span>
+<span id="cb17-6"><a href="#cb17-6" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="section2_files/figure-html/cell-15-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-outputid="653df08c-4fe2-4444-b755-b792fc7a9a8e">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> np.linspace(<span class="op">-</span><span class="dv">10</span>, <span class="dv">10</span>, <span class="dv">1001</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> n <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, <span class="dv">5</span>):</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    y <span class="op">=</span> x<span class="op">**</span>n <span class="op">*</span> np.sin(x)</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>    y <span class="op">/=</span> <span class="bu">max</span>(y)</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>    plt.plot(x, y, label<span class="op">=</span><span class="vs">r'$x^</span><span class="sc">{}</span><span class="vs">\sin x$'</span>.<span class="bu">format</span>(n))</span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>plt.legend(loc<span class="op">=</span><span class="st">'lower center'</span>)</span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="section2_files/figure-html/cell-16-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-outputid="5126dfaf-b828-442d-fb84-ba6dc18b7f04">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>t <span class="op">=</span> np.linspace(<span class="fl">0.</span>, <span class="fl">0.1</span>, <span class="dv">1000</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>Vp_uk, Vp_us <span class="op">=</span> <span class="dv">230</span> <span class="op">*</span> np.sqrt(<span class="dv">2</span>), <span class="dv">120</span> <span class="op">*</span> np.sqrt(<span class="dv">2</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>f_uk, f_us <span class="op">=</span> <span class="dv">50</span>, <span class="dv">60</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>V_uk <span class="op">=</span> Vp_uk <span class="op">*</span> np.sin(<span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> f_uk <span class="op">*</span> t)</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>V_us <span class="op">=</span> Vp_us <span class="op">*</span> np.sin(<span class="dv">2</span> <span class="op">*</span> np.pi <span class="op">*</span> f_us <span class="op">*</span> t)</span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>plt.plot(t<span class="op">*</span><span class="dv">1000</span>, V_uk, label<span class="op">=</span><span class="st">'UK'</span>)</span>
+<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>plt.plot(t<span class="op">*</span><span class="dv">1000</span>, V_us, label<span class="op">=</span><span class="st">'US'</span>)</span>
+<span id="cb19-8"><a href="#cb19-8" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">'A comparison of AC voltages in the UK and US'</span>)</span>
+<span id="cb19-9"><a href="#cb19-9" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Time /ms'</span>, fontsize<span class="op">=</span><span class="fl">16.</span>)</span>
+<span id="cb19-10"><a href="#cb19-10" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Voltage /V'</span>, fontsize<span class="op">=</span><span class="fl">16.</span>)</span>
+<span id="cb19-11"><a href="#cb19-11" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb19-12"><a href="#cb19-12" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="section2_files/figure-html/cell-17-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="algunos-ejemplos" class="level1">
+<h1>Algunos ejemplos</h1>
+<div class="cell" data-outputid="6b96e71c-167f-42b7-8324-049f43762eb2">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a><span class="co"># The data - lists of years:</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>year <span class="op">=</span> [<span class="dv">1972</span>, <span class="dv">1974</span>, <span class="dv">1978</span>, <span class="dv">1982</span>, <span class="dv">1985</span>, <span class="dv">1989</span>, <span class="dv">1993</span>, <span class="dv">1997</span>, <span class="dv">1999</span>, <span class="dv">2000</span>, <span class="dv">2003</span>,</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>        <span class="dv">2004</span>, <span class="dv">2007</span>, <span class="dv">2008</span>, <span class="dv">2012</span>]</span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a><span class="co"># And number of transistors (ntrans) on CPUs in millions:</span></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a>ntrans <span class="op">=</span> [<span class="fl">0.0025</span>, <span class="fl">0.005</span>, <span class="fl">0.029</span>, <span class="fl">0.12</span>, <span class="fl">0.275</span>, <span class="fl">1.18</span>, <span class="fl">3.1</span>, <span class="fl">7.5</span>, <span class="fl">24.0</span>, <span class="fl">42.0</span>,</span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>          <span class="fl">220.0</span>, <span class="fl">592.0</span>, <span class="fl">1720.0</span>, <span class="fl">2046.0</span>, <span class="fl">3100.0</span>]</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a><span class="co"># Turn the ntrans list into a NumPy array and multiply by 1 million.</span></span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a>ntrans <span class="op">=</span> np.array(ntrans) <span class="op">*</span> <span class="fl">1.e6</span></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a>y0, n0 <span class="op">=</span> year[<span class="dv">0</span>], ntrans[<span class="dv">0</span>]</span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="co"># A linear array of years spanning the data ' s years.</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> np.linspace(y0, year[<span class="op">-</span><span class="dv">1</span>], year[<span class="op">-</span><span class="dv">1</span>] <span class="op">-</span> y0 <span class="op">+</span> <span class="dv">1</span>)</span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a><span class="co"># Time taken in years for the number of transistors to double.</span></span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a>T2 <span class="op">=</span> <span class="fl">2.</span></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a>moore <span class="op">=</span> np.log10(n0) <span class="op">+</span> (y <span class="op">-</span> y0) <span class="op">/</span> T2 <span class="op">*</span> np.log10(<span class="dv">2</span>)</span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a>plt.plot(year, np.log10(ntrans), <span class="st">'*'</span>, markersize<span class="op">=</span><span class="dv">12</span>, color<span class="op">=</span><span class="st">'r'</span>,</span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a>         markeredgecolor<span class="op">=</span><span class="st">'r'</span>, label<span class="op">=</span><span class="st">'observed'</span>)</span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a>plt.plot(y, moore, linewidth<span class="op">=</span><span class="dv">2</span>, color<span class="op">=</span><span class="st">'k'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, label<span class="op">=</span><span class="st">'predicted'</span>)</span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>plt.legend(fontsize<span class="op">=</span><span class="dv">16</span>, loc<span class="op">=</span><span class="st">'upper left'</span>)</span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a>plt.xlabel(<span class="st">'Year'</span>)</span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'log(ntrans)'</span>)</span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a>plt.title(<span class="st">"Moore's law"</span>)</span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="section2_files/figure-html/cell-18-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-outputid="016568e6-6168-4ace-b40c-5eb6b2616a40">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a>years <span class="op">=</span> <span class="bu">range</span>(<span class="dv">2000</span>, <span class="dv">2010</span>)</span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>divorce_rate <span class="op">=</span> [<span class="fl">5.0</span>, <span class="fl">4.7</span>, <span class="fl">4.6</span>, <span class="fl">4.4</span>, <span class="fl">4.3</span>, <span class="fl">4.1</span>, <span class="fl">4.2</span>, <span class="fl">4.2</span>, <span class="fl">4.2</span>, <span class="fl">4.1</span>]</span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>margarine_consumption <span class="op">=</span> [<span class="fl">8.2</span>, <span class="dv">7</span>, <span class="fl">6.5</span>, <span class="fl">5.3</span>, <span class="fl">5.2</span>, <span class="dv">4</span>, <span class="fl">4.6</span>, <span class="fl">4.5</span>, <span class="fl">4.2</span>, <span class="fl">3.7</span>]</span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>line1 <span class="op">=</span> plt.plot(years, divorce_rate, <span class="st">'b-o'</span>,</span>
+<span id="cb21-6"><a href="#cb21-6" aria-hidden="true" tabindex="-1"></a>                   label<span class="op">=</span><span class="st">'Divorce rate in Maine'</span>)</span>
+<span id="cb21-7"><a href="#cb21-7" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'Divorces per 1000 people'</span>)</span>
+<span id="cb21-8"><a href="#cb21-8" aria-hidden="true" tabindex="-1"></a>plt.legend()</span>
+<span id="cb21-9"><a href="#cb21-9" aria-hidden="true" tabindex="-1"></a>plt.twinx()</span>
+<span id="cb21-10"><a href="#cb21-10" aria-hidden="true" tabindex="-1"></a>line2 <span class="op">=</span> plt.plot(years, margarine_consumption, <span class="st">'r-o'</span>,</span>
+<span id="cb21-11"><a href="#cb21-11" aria-hidden="true" tabindex="-1"></a>                 label<span class="op">=</span><span class="st">'Margarine consumption'</span>)</span>
+<span id="cb21-12"><a href="#cb21-12" aria-hidden="true" tabindex="-1"></a>plt.ylabel(<span class="st">'lb of Margarine (per capita)'</span>)</span>
+<span id="cb21-13"><a href="#cb21-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Jump through some hoops to get labels in the same legend:</span></span>
+<span id="cb21-14"><a href="#cb21-14" aria-hidden="true" tabindex="-1"></a>lines <span class="op">=</span> line1 <span class="op">+</span> line2</span>
+<span id="cb21-15"><a href="#cb21-15" aria-hidden="true" tabindex="-1"></a>labels <span class="op">=</span> []</span>
+<span id="cb21-16"><a href="#cb21-16" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> line <span class="kw">in</span> lines:</span>
+<span id="cb21-17"><a href="#cb21-17" aria-hidden="true" tabindex="-1"></a>    labels.append(line.get_label())</span>
+<span id="cb21-18"><a href="#cb21-18" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb21-19"><a href="#cb21-19" aria-hidden="true" tabindex="-1"></a>plt.legend(lines, labels)</span>
+<span id="cb21-20"><a href="#cb21-20" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="section2_files/figure-html/cell-19-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="gráficas-en-coordenadas-polares" class="level1">
+<h1>Gráficas en coordenadas polares</h1>
+<p>Para graficar en coordenadas polares se</p>
+<blockquote class="blockquote">
+<p>plt.polar(tetha,r)</p>
+</blockquote>
+<div class="cell" data-outputid="1f00ed94-48ce-45aa-e076-788b48c6bf74">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>theta <span class="op">=</span> np.linspace(<span class="dv">0</span>, <span class="fl">2.</span><span class="op">*</span>np.pi, <span class="dv">1000</span>)</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="fl">1.</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>r <span class="op">=</span> <span class="dv">2</span> <span class="op">*</span> a <span class="op">*</span> (<span class="fl">1.</span> <span class="op">+</span> np.cos(theta))</span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>plt.polar(theta, r)</span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="section2_files/figure-html/cell-20-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+</section>
+<section id="histogrmas" class="level1">
+<h1>Histogrmas</h1>
+<p>Para gráficar un histogrma se usa el código</p>
+<blockquote class="blockquote">
+<p>plt.hist(data, bins=20, density=True)</p>
+</blockquote>
+<p>el comando bins indica el numero de particiones que se quiere hacer el gráfico y density=True establece la densidad</p>
+<div class="cell" data-outputid="0ed1abbd-94ec-49f4-8e56-896121cb921b">
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
+<span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> []</span>
+<span id="cb23-4"><a href="#cb23-4" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">5000</span>):</span>
+<span id="cb23-5"><a href="#cb23-5" aria-hidden="true" tabindex="-1"></a>    data.append(random.normalvariate(<span class="dv">0</span>, <span class="dv">2</span>))</span>
+<span id="cb23-6"><a href="#cb23-6" aria-hidden="true" tabindex="-1"></a>plt.hist(data, bins<span class="op">=</span><span class="dv">20</span>, density<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb23-7"><a href="#cb23-7" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display">
+<p><img src="section2_files/figure-html/cell-21-output-1.png" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-executioninfo="{&quot;status&quot;:&quot;ok&quot;,&quot;timestamp&quot;:1644507542227,&quot;user_tz&quot;:300,&quot;elapsed&quot;:255,&quot;user&quot;:{&quot;displayName&quot;:&quot;Abel Alvarez Bustos&quot;,&quot;photoUrl&quot;:&quot;https://lh3.googleusercontent.com/a/default-user=s64&quot;,&quot;userId&quot;:&quot;04726289280755598660&quot;}}" data-outputid="e75a407a-2000-4031-e814-ef9b67d99d1c" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>s<span class="op">=</span>np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>])</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>s[<span class="dv">0</span>]<span class="op">*</span>s[<span class="dv">1</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>2</code></pre>
+</div>
+</div>
+</section>
+<section id="animaciones" class="level1">
+<h1>Animaciones</h1>
+<p>En python se puden hacer animaciones para ello puede consultar <a href="https://matplotlib.org/stable/api/animation_api.html#animation">matplotlib</a></p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

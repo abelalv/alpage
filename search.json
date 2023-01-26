@@ -1,0 +1,142 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Álgebra lineal Computacional",
+    "section": "",
+    "text": "Es es el curso de Álgebra lineal computacional, aqui estudiaremos algunos conceptos básicos de álgebra lineal, como vectores, matrices, espacios vectoriales, factorizaciones entre otras. Para ello usaremos la herramienta de programación Python y algunas librerias como Numpy, Scipy y Matplotlib. La siguientes paginas te puede ayudar a estudiar las principales características de Python y Numpy.\nAlgunos libros que te pueden ayudar a estudiar los conceptos de álgebra lineal son:"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Problemas que vamos a estudiar en el curso de Algebra Lineal # Espacios subespacios vectoriales"
+  },
+  {
+    "objectID": "compu.html",
+    "href": "compu.html",
+    "title": "Untitled",
+    "section": "",
+    "text": "Existen tres tipos de variables numéricas float, complex y int\n>>> a = 1\n>>> b = 1.0\n>>> c = 1 + 2j\n>>> type(a)\n<class 'int'>\n>>> type(b)\n<class 'float'>\n>>> type(c)\n<class 'complex'>"
+  },
+  {
+    "objectID": "index.html#programas-para-la-instalación",
+    "href": "index.html#programas-para-la-instalación",
+    "title": "Álgebra lineal Computacional",
+    "section": "Programas para la instalación",
+    "text": "Programas para la instalación\nPara esta clase se sugiere instalar 4 programas basicamente, * Anaconda * Python 3.0 * VS code * Git\nEl primero, es un entorno de programación usado para el manejo de grandes datos y machine learn, cuando usted instala este, inmediatemante instala Python. Además le puede dar la opción de instalar VS code y VS code y spyder, los cuales son entornos iteractivos para Python. El lenguaje de progrmación con el cual se programaran los algoritmos es Python. VS code es el interprete para muchos lenguajes de programación y tiene muchas ventajas frente a sus competencias y es software libre. Por último vamos a usar Git, el cual es un gestor de cambios, el cual nos permite trabajar con GitHub. Para la instalación de cada uno de estos software se puede remitir a sus paginas oficiales."
+  },
+  {
+    "objectID": "about.html#multiplicación-usando-columnas-ax",
+    "href": "about.html#multiplicación-usando-columnas-ax",
+    "title": "About",
+    "section": "Multiplicación usando columnas \\(Ax\\)",
+    "text": "Multiplicación usando columnas \\(Ax\\)"
+  },
+  {
+    "objectID": "about.html#cuatro-espacios-vectoriales-fundamentales",
+    "href": "about.html#cuatro-espacios-vectoriales-fundamentales",
+    "title": "About",
+    "section": "Cuatro espacios vectoriales fundamentales",
+    "text": "Cuatro espacios vectoriales fundamentales"
+  },
+  {
+    "objectID": "about.html#norma-de-vectores-matrices-y-funciones",
+    "href": "about.html#norma-de-vectores-matrices-y-funciones",
+    "title": "About",
+    "section": "Norma de vectores, matrices y funciones",
+    "text": "Norma de vectores, matrices y funciones\n\nk-mean clustering"
+  },
+  {
+    "objectID": "about.html#pca",
+    "href": "about.html#pca",
+    "title": "About",
+    "section": "PCA",
+    "text": "PCA"
+  },
+  {
+    "objectID": "section1.html",
+    "href": "section1.html",
+    "title": " Introducción a la álgebra lineal Computacional",
+    "section": "",
+    "text": "Existen tres tipos de variables numéricas float, complex y int\n\nfloat(5.0)\n\n5.0\n\n\n\nint(5.8)\n\n5\n\n\n\ncomplex(1,2)\n\n(1+2j)\n\n\n\n\n\n\n\n\nSimbolos\nOperaciones\n\n\n\n\n+\nsuma\n\n\n*\nMultiplicación\n\n\n/\nDivisión de numeros flotantes\n\n\n//\nDivisión de números enteros\n\n\n%\nMódulo\n\n\n**\nExponencial\n\n\n\n\nprint(5%3)\n\n2\n\n\n\n(4.0+5.3j).imag\n\n5.3\n\n\nPara las operaciones matemáticas usted debe importar la libreria math la cual la debe importar con\n\nimport math as ma\n\n\nma.sqrt(4.0)\n\n2.0\n\n\nAqui podemos generar variables de la siguiente forma\n\na=2.0+6.2j\n\n\ntype(a) # con este comando puede usted ver que tipo de variable esta guardada\n\ncomplex\n\n\nPodemos comprara variables y numéros con los siguientes comando\n\n\n\nSimbolos\nOperaciones\n\n\n\n\n==\nigual\n\n\n!=\ndiferente\n\n\n<\nmenor que\n\n\n<=\nmenor igual que\n\n\n\\(>\\)\nmayor que\n\n\n\\(>=\\)\nmayor e igual que\n\n\n\n\n4==4.0\n\nTrue\n\n\n\n\n\nLos operadores lógicos en Python son >and\n>or >not\nQue diferencia existe con la siguiente sintaxis >from math import *\ny\n\nimport math"
+  },
+  {
+    "objectID": "section1.html#variables",
+    "href": "section1.html#variables",
+    "title": " Introducción a la álgebra lineal Computacional",
+    "section": "Variables",
+    "text": "Variables\nExisten tres tipos de variables numéricas float, complex y int\n\nfloat(5.0)\n\n5.0\n\n\n\nint(5.8)\n\n5\n\n\n\ncomplex(1,2)\n\n(1+2j)"
+  },
+  {
+    "objectID": "section1.html#operaciones-aritméticas",
+    "href": "section1.html#operaciones-aritméticas",
+    "title": " Introducción a la álgebra lineal Computacional",
+    "section": "Operaciones aritméticas",
+    "text": "Operaciones aritméticas\n\n\n\nSimbolos\nOperaciones\n\n\n\n\n+\nsuma\n\n\n*\nMultiplicación\n\n\n/\nDivisión de numeros flotantes\n\n\n//\nDivisión de números enteros\n\n\n%\nMódulo\n\n\n**\nExponencial\n\n\n\n\nprint(5%3)\n\n2\n\n\n\n(4.0+5.3j).imag\n\n5.3\n\n\nPara las operaciones matemáticas usted debe importar la libreria math la cual la debe importar con\n\nimport math as ma\n\n\nma.sqrt(4.0)\n\n2.0\n\n\nAqui podemos generar variables de la siguiente forma\n\na=2.0+6.2j\n\n\ntype(a) # con este comando puede usted ver que tipo de variable esta guardada\n\ncomplex\n\n\nPodemos comprara variables y numéros con los siguientes comando\n\n\n\nSimbolos\nOperaciones\n\n\n\n\n==\nigual\n\n\n!=\ndiferente\n\n\n<\nmenor que\n\n\n<=\nmenor igual que\n\n\n\\(>\\)\nmayor que\n\n\n\\(>=\\)\nmayor e igual que\n\n\n\n\n4==4.0\n\nTrue"
+  },
+  {
+    "objectID": "section1.html#operadores-lógicos",
+    "href": "section1.html#operadores-lógicos",
+    "title": " Introducción a la álgebra lineal Computacional",
+    "section": "Operadores lógicos",
+    "text": "Operadores lógicos\nLos operadores lógicos en Python son >and\n>or >not\nQue diferencia existe con la siguiente sintaxis >from math import *\ny\n\nimport math"
+  },
+  {
+    "objectID": "section1.html#ejemplos-adicionales",
+    "href": "section1.html#ejemplos-adicionales",
+    "title": " Introducción a la álgebra lineal Computacional",
+    "section": "Ejemplos adicionales",
+    "text": "Ejemplos adicionales\n\nlista_de_colores = ['rojo', 'verde', 'azul', 'blanco']\nfor color in lista_de_colores:\n    for letra in color:\n        print(letra,end='.')\n    print()\n\nr.o.j.o.\nv.e.r.d.e.\na.z.u.l.\nb.l.a.n.c.o."
+  },
+  {
+    "objectID": "section1.html#if",
+    "href": "section1.html#if",
+    "title": " Introducción a la álgebra lineal Computacional",
+    "section": "If",
+    "text": "If\nLa sintanxis del es\n\nif < logical expression 1 >:\n\n\n<statements 1 >\n\n\nelif < logical expression 2 >:\n\n\n<statements 2 >\n\n\n…\n\n\nelse:\n\n\n\n\nLa sintaxis de if es similar a la de otros lenguajes de programación\n\nfor x in range(10):\n    if x <= 3:\n        print(x, 'is less than or equal to three ')\n    elif x ==5 or x ==6:\n        print(x, 'is greater than five ')\n    else:\n        print(x, 'must be four or five , then ')\n       \n\n0 is less than or equal to three \n1 is less than or equal to three \n2 is less than or equal to three \n3 is less than or equal to three \n4 must be four or five , then \n5 is greater than five \n6 is greater than five \n7 must be four or five , then \n8 must be four or five , then \n9 must be four or five , then"
+  },
+  {
+    "objectID": "section1.html#continue",
+    "href": "section1.html#continue",
+    "title": " Introducción a la álgebra lineal Computacional",
+    "section": "continue",
+    "text": "continue\nContinue es un estamento similar a break, pero en lugar de salir del ciclo que esta contenido en el bucle, este fuerza a la nueva iteración del bucle sin completar las intrucciones del bloque de la actual iteración\n\nfor i in range(1, 11):\n    if i % 2:\n        continue\n    print(i, 'is even!')\n\n2 is even!\n4 is even!\n6 is even!\n8 is even!\n10 is even!"
+  },
+  {
+    "objectID": "section1.html#pass",
+    "href": "section1.html#pass",
+    "title": " Introducción a la álgebra lineal Computacional",
+    "section": "pass",
+    "text": "pass\nEl comando de paso no hace nada. Es útil como un “código auxiliar” para el código que aún no se ha escrito, pero donde una declaración se equipara sintácticamente con los espacios en blanco de Python.\n\nfor i in range(1, 11):\n    if i == 6:\n        pass # do something special if i is 6\n    if not i % 3:\n        print(i, 'is divisible by 3')\n\n3 is divisible by 3\n6 is divisible by 3\n9 is divisible by 3"
+  },
+  {
+    "objectID": "section1.html#definición-de-funciones",
+    "href": "section1.html#definición-de-funciones",
+    "title": " Introducción a la álgebra lineal Computacional",
+    "section": "Definición de funciones",
+    "text": "Definición de funciones\nPara definir una función en Python es necesario tres partes, encabezado, cuerpo y retorno. Para llamar la función debemos usar el encabezado. Ejemplo\n\ndef cuadrado( ):   # encabezado de la función\n    x=8\n    x_cuadrado=x**2 # cuerpo\n    return x_cuadrado #retorno  \n## llamar la función \ns=cuadrado()\nprint(s)\n\n64\n\n\nPuede ser más de un argumetno que se ingresa en la función, ya sea listas, tuplas o string\n\ndef ejemplo(x,a,s):\n    print(x[0],a[1],s)\n    return x[1], s[0]\nx=[1,2.3]\na=(2,5.2,6)\ns='hola'\na,u=ejemplo(x,a,s)\nprint(u)\n\n1 5.2 hola\nh\n\n\nEn phyton es posible pasar los argumentos en desorden de la siguiente forma\n\ndef ejemplo(x, a, s):\n    print(x[0], a[1], s)\n    return\n\n\np = [1, 2.3]\nh = (2, 5.2, 6)\nf = 'hola'\nejemplo(s=f, x=p, a=h)\n\n1 5.2 hola\n\n\nCaundo se quiere haccer una programación modulada, es decir crear varios archivos o fichero, lo cual ayuda a la manotención estas se deben importar\n\nFichero 1 # Fibonacci numbers module\n\n\ndef fib(n): # write Fibonacci series up to n\n\n\na, b = 0, 1\n\n\nwhile a < n:\n\n\n   print(a, end=' ')\n\n\n   a, b = b, a+b\n\n\nprint()\n\n\ndef fib2(n): # return Fibonacci series up to n\n\n\nresult = []\n\n\na, b = 0, 1\n\n\nwhile a < n:\n\n\n   result.append(a)\n\n\n   a, b = b, a+b\n\n\nreturn result"
+  },
+  {
+    "objectID": "section2.html",
+    "href": "section2.html",
+    "title": " Introducción a la álgebra lineal Computacional",
+    "section": "",
+    "text": "Ejemplo de graficar un finción \\(y=\\sin^2(x)\\) para \\(-2\\pi\\leq x\\leq 2\\pi\\)\nTmamos un aprtición equiespaciada de espacio \\(\\Delta x\\) con $ n $ puntos, de esta forma querermos gráficas las parejas \\(y_i=\\sin^2(x_i)\\) para \\(i=0,\\dots,n-1\\)\n\nimport math\nimport matplotlib.pyplot as plt\nxmin,xmax=-2.*math.pi,2.*math.pi\nn= 100\nx=[0.]*100 # crea los vectores de n elementos \ny=[0.]*100\ndx=(xmax-xmin)/(n-1)\nfor i in range(n):\n    x[i]=xmin+i*dx\n    y[i]=math.sin(x[i])**2\n    \nplt.plot(x,y)\nplt.show()\n    \n\n\n\n\nAhora vamso a realizar la misma gráfica usando vectorización\n\nimport numpy as np\nimport matplotlib.pyplot as plt \nn=1000\nxmin,xmax =-2.0*np.pi,2.0*np.pi\nx=np.linspace(xmin,xmax,n)\ny=np.sin(x)**2\nplt.plot(x,y)\nplt.show()\n\n\n\n\nComo usar la vectorización con tuplas\n\nw=[1.0, 2.0,3.0,4.0]\nw=w*2 # recuerde que aqui dulica la lista\nz=np.array(w)\nz=2*z # aqui multiplica cada elemento de z por 2\n\nAhora miremos la siguiente gráfica\n\\[f(x)=\\frac{\\sin x}{x}.\\]\n\nimport numpy as np\nimport matplotlib.pyplot as plt\nn = 1001\nxmin, xmax = -2.0*np.pi, 2.0*np.pi\nx=np.linspace(xmin,xmax,n)\ny=np.sin(x)/x\nplt.plot(x,y)\nplt.show()\n\nC:\\Users\\portatil\\AppData\\Local\\Temp/ipykernel_11736/1880265921.py:6: RuntimeWarning: invalid value encountered in true_divide\n  y=np.sin(x)/x\n\n\n\n\n\nNote como x toma el valor de cero toma el valor NaN y lo ignora. Además presenta un mensaje del hecho\n\nLabels, legends y resumenes Para gráfica legends y labels hacemos lo siguiente\n\n\nplt.plot(x,y,label='sin^2(x)')\nplt.legend()\nplt.show()\n\n\n\n\nPor defecto la localización queda en el mejor lugar pero las podemos modificar con la siguiente tabla\n\n\n\nString\ninteger\n\n\n\n\n‘best’\n0\n\n\n‘upper rigth’\n1\n\n\n‘upper ledft’\n2\n\n\n‘lower left’\n3\n\n\n‘lowe right’\n4\n\n\n‘right’\n5\n\n\n‘center left’\n6\n\n\n‘center rigth’\n7\n\n\n‘lower center’\n8\n\n\n‘upper center’\n9\n\n\n‘center’\n10\n\n\n\n\nplt.plot(x, y, label='$sin^2(x)$') # note que aquí colocamos los simbilos $$ para que se pueda inicializar el modo latex\nplt.legend(loc=10)\nplt.show()\n\n\n\n\n\nimport matplotlib.pyplot as plt\nimport numpy as np\n\n\nx = np.linspace(-np.pi/2, np.pi/2, 31)\ny = np.cos(x)**3\n\n# 1) remove points where y > 0.7\nx2 = x[y <= 0.7]\ny2 = y[y <= 0.7]\n\n# 2) mask points where y > 0.7\ny3 = np.ma.masked_where(y > 0.7, y)\n\n# 3) set to NaN where y > 0.7\ny4 = y.copy()\ny4[y3 > 0.7] = np.nan\n\nplt.plot(x*0.1, y, 'o-', color='lightgrey', label='No mask')\nplt.plot(x2*0.4, y2, 'o-', label='Points removed')\nplt.plot(x*0.7, y3, 'o-', label='Masked values')\nplt.plot(x*1.0, y4, 'o-', label='NaN values')\nplt.legend()\nplt.title('Masked and NaN data')\nplt.show()\n\n\n\n\n\n\nAlgunos Matplotlib\n\n\n\nCódigo\nMarca\nDescripción\n\n\n\n\n\\(.\\)\n\\(.\\)\nPunto\n\n\nO\n\\(o\\)\ncirculo\n\n\n+\n\\(+\\)\nmas\n\n\nX\n\\(\\times\\)\ncruz\n\n\nD\n\\(\\diamond\\)\ndiamante\n\n\nV\n\\(\\nabla\\)\nNabla\n\n\n^\n\\(\\Delta\\)\nNabla\n\n\nS\n\\(\\square\\)\ncuadrado\n\n\n*\n\\(\\star\\)\nextrella\n\n\n\n# Tabla de colores\n\n\n\nColor básico\nTabla de colores\n\n\n\n\nb=blue\ntab:blue\n\n\ng=green\ntab:orange\n\n\nr=red\ntab:green\n\n\nc=cyan\ntab:red\n\n\nm= magenta\ntab:purple\n\n\ny=yellow\ntab:brown\n\n\nk=black\ntab:pink\n\n\nw=white\ntab:gray\n\n\n.\ntab:olive\n\n\n.\ntab:cyan\n\n\n\n\n\ntipos de línea\n\n\n\nCódigo\nTipo de línea\n\n\n\n\n-\nSolida\n\n\n–\na trozos\n\n\n:\npunteada\n\n\n\n-.\nPara mas caracteristicas matplotlib\n\nx = np.linspace(0.1, 1., 100)\nyi = 1. / x\nye = 10. * np.exp(-2 * x)\nplt.plot(x, yi, color='r', linestyle=':', linewidth=4.)\nplt.plot(x, ye, color='m', linestyle='--', linewidth=2.)\nplt.show()\n\n\n\n\n\n\nPuntos límites\nLos límites de una gráfica se puede reconfigurar usando los comandos\n\nplt.xlim(x_initial,x_final)\n\n\nplt.ylim(y_initial,y_final)\n\n\nt = np.linspace(0, 2, 1000)\nf = t * np.exp(t + np.sin(20*t))\nplt.plot(t, f)\nplt.xlim(1.5, 1.8)\nplt.ylim(0, 30)\nplt.show()\n\n\n\n\n\nx = np.linspace(-10, 10, 1001)\nfor n in range(1, 5):\n    y = x**n * np.sin(x)\n    y /= max(y)\n    plt.plot(x, y, label=r'$x^{}\\sin x$'.format(n))\nplt.legend(loc='lower center')\nplt.show()\n\n\n\n\n\nt = np.linspace(0., 0.1, 1000)\nVp_uk, Vp_us = 230 * np.sqrt(2), 120 * np.sqrt(2)\nf_uk, f_us = 50, 60\nV_uk = Vp_uk * np.sin(2 * np.pi * f_uk * t)\nV_us = Vp_us * np.sin(2 * np.pi * f_us * t)\nplt.plot(t*1000, V_uk, label='UK')\nplt.plot(t*1000, V_us, label='US')\nplt.title('A comparison of AC voltages in the UK and US')\nplt.xlabel('Time /ms', fontsize=16.)\nplt.ylabel('Voltage /V', fontsize=16.)\nplt.legend()\nplt.show()\n\n\n\n\n\n\nAlgunos ejemplos\n\nimport numpy as np\nimport matplotlib.pyplot as plt\n# The data - lists of years:\nyear = [1972, 1974, 1978, 1982, 1985, 1989, 1993, 1997, 1999, 2000, 2003,\n        2004, 2007, 2008, 2012]\n# And number of transistors (ntrans) on CPUs in millions:\nntrans = [0.0025, 0.005, 0.029, 0.12, 0.275, 1.18, 3.1, 7.5, 24.0, 42.0,\n          220.0, 592.0, 1720.0, 2046.0, 3100.0]\n# Turn the ntrans list into a NumPy array and multiply by 1 million.\nntrans = np.array(ntrans) * 1.e6\ny0, n0 = year[0], ntrans[0]\n# A linear array of years spanning the data ' s years.\ny = np.linspace(y0, year[-1], year[-1] - y0 + 1)\n# Time taken in years for the number of transistors to double.\nT2 = 2.\nmoore = np.log10(n0) + (y - y0) / T2 * np.log10(2)\nplt.plot(year, np.log10(ntrans), '*', markersize=12, color='r',\n         markeredgecolor='r', label='observed')\nplt.plot(y, moore, linewidth=2, color='k', linestyle='--', label='predicted')\nplt.legend(fontsize=16, loc='upper left')\nplt.xlabel('Year')\nplt.ylabel('log(ntrans)')\nplt.title(\"Moore's law\")\nplt.show()\n\n\n\n\n\nimport matplotlib.pyplot as plt\nyears = range(2000, 2010)\ndivorce_rate = [5.0, 4.7, 4.6, 4.4, 4.3, 4.1, 4.2, 4.2, 4.2, 4.1]\nmargarine_consumption = [8.2, 7, 6.5, 5.3, 5.2, 4, 4.6, 4.5, 4.2, 3.7]\nline1 = plt.plot(years, divorce_rate, 'b-o',\n                   label='Divorce rate in Maine')\nplt.ylabel('Divorces per 1000 people')\nplt.legend()\nplt.twinx()\nline2 = plt.plot(years, margarine_consumption, 'r-o',\n                 label='Margarine consumption')\nplt.ylabel('lb of Margarine (per capita)')\n# Jump through some hoops to get labels in the same legend:\nlines = line1 + line2\nlabels = []\nfor line in lines:\n    labels.append(line.get_label())\n    \nplt.legend(lines, labels)\nplt.show()\n\n\n\n\n\n\nGráficas en coordenadas polares\nPara graficar en coordenadas polares se\n\nplt.polar(tetha,r)\n\n\ntheta = np.linspace(0, 2.*np.pi, 1000)\na = 1.\nr = 2 * a * (1. + np.cos(theta))\nplt.polar(theta, r)\nplt.show()\n\n\n\n\n\n\nHistogrmas\nPara gráficar un histogrma se usa el código\n\nplt.hist(data, bins=20, density=True)\n\nel comando bins indica el numero de particiones que se quiere hacer el gráfico y density=True establece la densidad\n\nimport matplotlib.pyplot as plt\nimport random\ndata = []\nfor i in range(5000):\n    data.append(random.normalvariate(0, 2))\nplt.hist(data, bins=20, density=True)\nplt.show()\n\n\n\n\n\nimport numpy as np\ns=np.array([1, 2, 4])\ns[0]*s[1]\n\n2\n\n\n\n\nAnimaciones\nEn python se puden hacer animaciones para ello puede consultar matplotlib"
+  },
+  {
+    "objectID": "section3.html",
+    "href": "section3.html",
+    "title": "Espacios vectoriales",
+    "section": "",
+    "text": "Sea \\(V\\) un conjunto de elementos (estos elementos serán llamados vectores), y \\(F\\) un campo (en nuestro caso serán los números reales o complejos, es llamado un espacio vectorial si satisface los siguientes axiomas\n\nClausuraAdición.Multiplicación.\n\n\n\nSi \\(x,y\\in V\\) entonces existe un único \\(z\\in V\\) tal que \\(x+y=z\\).\nSi \\(a\\in F\\) y \\(x\\in V\\) entonces existe un único \\(z\\in V\\) tal que \\(z=ax\\).\n\n\n\nSi \\(x,y,z \\in V\\) y \\(a\\in F\\)\n\n\\(x+y=y+x\\)\n\\((x+y)+z=x+(y+z)\\)\nExistencia del cero Existe un elemento en \\(V\\) denotado por \\(0_V\\) tal que\n\\(x+0_V=x\\) (note que e muchas veces se tomara por notación \\(0\\) en vez de \\(=_V\\))\nExistencia de opuesto, Para todo \\(x\\in V\\) existe un elemento \\(y\\in V\\) tal que\n\\(x+y=0_V\\). Este elemento sera denotado por \\(-x=y\\)\n\n\n\nSi \\(x,y,z \\in V\\) y \\(a,b\\in F\\)\n\n\\(a(bx)=(ab)x\\)\n\\(a(x+y)=ax+ay\\)\n\\((a+b)x=ax+bx\\)\nPara todo \\(x\\in V\\) tenemos \\(1x=x\\)\n\n\n\n\n\n\n\n\\(\\mathcal{R}̣\\)\n\\(\\mathcal{C}\\)\n\\(\\mathcal{R}^n\\)\n\\(\\mathcal{C}^n\\)\nEl conjunto de todos los vectores ortogonales a un vector dado\nEl conjunto de todas las funciones definidas en \\(\\mathcal{R}\\)\nEl conjunto de todas las funciones continuas en un intervalo dado\nEl conjunto de todas las matrices del mismo tamaño\nEl conjunto de todas las funciones diferenciables en un intervalo dado\nEl conjunto de todas las funciones que satisfacen la ecuación diferencial \\[y''+ay'+by.\\]\n\n\n\nSea \\(V\\) un espacio vectorial y \\(S\\) un subconjunto de \\(V\\), \\(S\\) es un subespacio de \\(V\\), si en si mismo es un espacio vectorial.\n\n\n\n\n\n\nTeorema\n\n\n\nSea \\(S\\) un subconjunto no vació de un espacio vectorial \\(V\\). Si los elementos de \\(S\\) satisfacen los axiomas de clausura entonces \\(S\\) es un subespacio de \\(V\\)\n\n\n\n\n\n\n\n\nDefinición\n\n\n\nSea \\(S\\) un subconjunto no vació de un espacio vectorial \\(V\\), un elemento \\(x\\) de \\(V\\) de la forma: \\[x=\\sum_{i=1}^{k}c_ix_i,\\] en donde \\(x_1,x_2,...,x_k\\) son elementos de \\(S\\) y \\(c_i\\) son escalares, se denomina la combinación lineal de elementos de \\(S\\).\n\n\n\n\n\n\n\n\nTeorema\n\n\n\nEl conjunto \\(span(S)=\\{\\sum_{i=1}^{k}c_ix_i,|c_i\\in F\\}\\) de todos los elementos generados en combinación lineal de \\(S\\) es un subespacio vectorial de \\(V\\)\n\n\n\n\n\n\n\n\nNote\n\n\n\nSi \\(S\\) es un subespacio de \\(V\\) entonces \\(S=span(S)\\). Además, el generado \\(gen(S)=span(S)\\)\n\n\nSupongamos que queremos calcular el \\(span(S)\\) donde \\(S\\{x_1,x_2,...,x_n\\}\\), y \\(x_i\\in\\mathbb{R^n}\\), para esto debemos calcular todas las combinaciones lineales de los elementos de \\(S\\) de la siguinete forma\n\\[span(S)=\\{\\sum_{i=1}^{n}c_ix_i,|c_i\\in\\mathbb{R}\\}\\]\nOtra forma de calcular esta combinación es crear una matriz con todos los vectores de \\(S\\) y multiplicarla por un vector columna de los coeficientes \\(c_i\\), de esta forma obtenemos un vector columna con todos los elementos de la combinación lineal, es decir,\n\n\n\n\n\n\nDefinición\n\n\n\nUsing callouts is an effective way to highlight content that your reader give special consideration or attention."
+  },
+  {
+    "objectID": "section3.html#kmeans",
+    "href": "section3.html#kmeans",
+    "title": " Introducción a la álgebra lineal Computacional",
+    "section": "Kmeans",
+    "text": "Kmeans\nTomado de Implementing the k-means algorithm with numpy\n# Esto tiene formato de código\n\n# necessary imports\n%matplotlib inline\nimport matplotlib.pyplot as plt\nimport numpy as np\nimport seaborn as sns; sns.set()\n\nCreación de los puntos un vector de 250 puntos en el p´lano cartesiano\n\npoints = np.vstack(((np.random.randn(150, 2) * 0.75 + np.array([1, 0])),\n                  (np.random.randn(20, 2) * 0.25 + np.array([-0.5, 0.5])),\n                  (np.random.randn(20, 2) * 0.5 + np.array([-0.5, -0.5]))))\n\n\npoints.shape\n\n(9, 2)\n\n\nGráfica de lo puntos en el plano, y escogencia de los clusters iniciales\n\nplt.scatter(points[:, 0], points[:, 1])\nax = plt.gca()\nax.add_artist(plt.Circle(np.array([1, 0]), 0.75/2, fill=False, lw=3))\nax.add_artist(plt.Circle(np.array([-0.5, 0.5]), 0.25/2, fill=False, lw=3))\nax.add_artist(plt.Circle(np.array([-0.5, -0.5]), 0.5/2, fill=False, lw=3))\n\n<matplotlib.patches.Circle at 0x7f1583b90b10>\n\n\n\n\n\ninicializa centroides\n\ndef initialize_centroids(points, k):\n    \"\"\"returns k centroids from the initial points\"\"\"\n    centroids = points.copy()\n    np.random.shuffle(centroids)\n    return centroids[:k]\n\n\ninitialize_centroids(points, 3)\n\narray([[ 0.49616568, -0.95300339],\n       [-0.57208225,  0.44120042],\n       [ 1.06850999, -0.04933413]])\n\n\n\nplt.scatter(points[:, 0], points[:, 1])\ncentroids = initialize_centroids(points, 2)\nplt.scatter(centroids[:, 0], centroids[:, 1], c='r', s=100)\n\n<matplotlib.collections.PathCollection at 0x7f1583085790>"
+  }
+]

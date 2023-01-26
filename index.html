@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Introducción a la álgebra lineal Computacional - Álgebra lineal Computacional</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-fixed">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <div class="navbar-brand-container">
+    <a class="navbar-brand" href="./index.html">
+    <span class="navbar-title">Introducción a la álgebra lineal Computacional</span>
+    </a>
+  </div>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link active" href="./index.html" aria-current="page">Home</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./about.html">About</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./section1.html">Introducción a Phyton parte I</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./section2.html">Gráficas</a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./section3.html">Untitled</a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#toy-kit" id="toc-toy-kit" class="nav-link active" data-scroll-target="#toy-kit">Toy-Kit</a>
+  <ul class="collapse">
+  <li><a href="#programas-para-la-instalación" id="toc-programas-para-la-instalación" class="nav-link" data-scroll-target="#programas-para-la-instalación">Programas para la instalación</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Álgebra lineal Computacional</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<p>Es es el curso de Álgebra lineal computacional, aqui estudiaremos algunos conceptos básicos de álgebra lineal, como vectores, matrices, espacios vectoriales, factorizaciones entre otras. Para ello usaremos la herramienta de programación Python y algunas librerias como Numpy, Scipy y Matplotlib. La siguientes paginas te puede ayudar a estudiar las principales características de Python y Numpy.</p>
+<ul>
+<li><a href="https://www.python.org/">Python</a></li>
+<li><a href="http://www.numpy.org/">Numpy</a></li>
+<li><a href="https://www.scipy.org/">Scipy</a></li>
+<li><a href="https://matplotlib.org/">Matplotlib</a></li>
+<li><a href="http://jupyter.org/">Jupyter</a></li>
+<li><a href="https://aprendeconalf.es/docencia/python/manual/">Bolck de Python</a></li>
+<li><a href="https://www.cacheme.org/curso-online-python-cientifico-ingenieros/">Curso introductorio de Python</a> y sus <a href="https://www.youtube.com/watch?v=ox09Jko1ErM">videos</a></li>
+<li>[Cursos similares][https://ocw.mit.edu/courses/18-065-matrix-methods-in-data-analysis-signal-processing-and-machine-learning-spring-2018/]</li>
+<li><a href="https://www.youtube.com/watch?v=8iGzBMboA0I&amp;list=PLtmWHNX-gukIc92m1K0P6bIOnZb-mg0hY">Curso de álgebra lineal computacional</a> y su repositorio <a href="https://github.com/fastai/numerical-linear-algebra">Github</a></li>
+</ul>
+<p>Algunos libros que te pueden ayudar a estudiar los conceptos de álgebra lineal son:</p>
+<ul>
+<li><a href="https://math.mit.edu/~gs/learningfromdata/">Algebra lineal</a></li>
+<li><a href="https://www.amazon.com/Numerical-Linear-Algebra-Trefethen-Bau/dp/0898713617">Numerical Linear Algebra</a></li>
+<li><a href="https://www.amazon.com/Numerical-Analysis-3rd-Timothy-Sauer/dp/013469645X">Numerical analysis</a></li>
+</ul>
+<section id="toy-kit" class="level1">
+<h1>Toy-Kit</h1>
+<section id="programas-para-la-instalación" class="level2">
+<h2 class="anchored" data-anchor-id="programas-para-la-instalación">Programas para la instalación</h2>
+<p>Para esta clase se sugiere instalar 4 programas basicamente, * <a href="https://www.anaconda.com/">Anaconda</a> * <a href="https://www.python.org/downloads/windows/">Python 3.0</a> * <a href="https://code.visualstudio.com/download">VS code</a> * <a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git">Git</a></p>
+<p>El primero, es un entorno de programación usado para el manejo de grandes datos y machine learn, cuando usted instala este, inmediatemante instala Python. Además le puede dar la opción de instalar VS code y <a href="https://code.visualstudio.com/download">VS code</a> y <a href="https://www.spyder-ide.org/">spyder</a>, los cuales son entornos iteractivos para Python. El lenguaje de progrmación con el cual se programaran los algoritmos es Python. VS code es el interprete para muchos lenguajes de programación y tiene muchas ventajas frente a sus competencias y es software libre. Por último vamos a usar Git, el cual es un gestor de cambios, el cual nos permite trabajar con GitHub. Para la instalación de cada uno de estos software se puede remitir a sus paginas oficiales.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

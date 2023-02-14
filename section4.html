@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introducción a la álgebra lineal Computacional - $ subespacios principales$</title>
+<title>Introducción a la álgebra lineal Computacional - Subespacios principales de una matriz</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -106,7 +106,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./section4.html" aria-current="page">
- <span class="menu-text">$ subespacios principales$</span></a>
+ <span class="menu-text">Subespacios principales de una matriz</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./section5.html">
@@ -134,7 +134,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">$ subespacios principales$</h1>
+<h1 class="title">Subespacios principales de una matriz</h1>
 </div>
 
 
@@ -159,7 +159,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Llamaremos <span class="math inline">\(C(A)\)</span> como el espacio columna de la matriz <span class="math inline">\(A\)</span> y <span class="math inline">\(N(A)\)</span> como el espacio nulo de la matriz de <span class="math inline">\(A\)</span>. De aquì podemos observar las siguientes propiedades</p>
 <p><span class="math display">\[C(A^T)\perp N(A).\]</span> Para mostrar esta proiedad debemos mostrar que si <span class="math inline">\(x_1\in C(A^T)\)</span> y <span class="math inline">\(x_2\in N(A)\)</span>, entonces</p>
 <p><span class="math display">\[\langle x_1,x_2\rangle=x_2^Tx_1=0.\]</span></p>
-<p>Sabemos que existe un <span class="math inline">\(y\in \mathbb{R}^m\)</span>, note que <span class="math inline">\(y=y_1+y_2\)</span>, donde <span class="math inline">\(y_2\in N(A^T)\)</span> luego <span class="math inline">\(A^Ty=A^ty_1=x_1\)</span>. Ahora tenemos que</p>
+<p>Sabemos que existe un <span class="math inline">\(y\in \mathbb{R}^m\)</span>, note que lo podemos descomponer en <span class="math inline">\(y=y_1+y_2\)</span>, donde <span class="math inline">\(y_1\in C(A)\)</span> y <span class="math inline">\(y_2\in N(A^T)\)</span> luego <span class="math display">\[A^Ty=A^T(y_1+y_2)=A^ty_1=x_1.\]</span></p>
+<p>Ahora tenemos que</p>
 <p><span class="math display">\[\langle x_2,x_1\rangle=(A^Ty)^Tx_2=y^TAx_2=0,\]</span> por tanto son ortogonales. Con un argumento similar podemos mostrar que <span class="math inline">\(C(A)\perp N(A^T)\)</span>.</p>
 <p>Ademas tenemos la propiedad que <span class="math display">\[dim(C(A))=dim(N(A^T))=r,\]</span> de esta forma tenemos que <span class="math inline">\(dim(N(A))=n-r\)</span> y <span class="math inline">\(dim(N(A^T))=m-r\)</span>.</p>
 <div class="callout-tip callout callout-style-default no-icon callout-captioned">
@@ -188,7 +189,11 @@ Definición
 <p>Sea <span class="math inline">\(A\)</span> una matriz de <span class="math inline">\(m\times n\)</span>, con <span class="math inline">\(m&gt;n\)</span> <span class="math inline">\(rank(A)=n\)</span> diremos que <span class="math inline">\(A\)</span> es una matriz de rango completo.</p>
 </div>
 </div>
-<p>Algunas propiedades importantes del rank son las siguientes * Si <span class="math inline">\(A\)</span> es una matriz cuadrada entonces <span class="math inline">\(rank(A)=n\)</span> todos autovalores de <span class="math inline">\(A\)</span> son distintos. * Si <span class="math inline">\(A\)</span> es una matriz cuadrada entonces <span class="math inline">\(rank(A)=n\)</span> si y solo si <span class="math inline">\(A\)</span> es invertible.</p>
+<p>Algunas propiedades importantes del rank son las siguientes</p>
+<ul>
+<li><p>Si <span class="math inline">\(A\)</span> es una matriz cuadrada y <span class="math inline">\(rank(A)=n\)</span> entonces todos autovalores de <span class="math inline">\(A\)</span> son distintos de cero.</p></li>
+<li><p>Si <span class="math inline">\(A\)</span> es una matriz cuadrada entonces <span class="math inline">\(rank(A)=n\)</span> si y solo si <span class="math inline">\(A\)</span> es invertible.</p></li>
+</ul>
 <p>Para demostrar la primera vamos a suponer que es falso por tanto 0 es un autovalor luego <span class="math inline">\(Ax=0\)</span>, lo que implica que <span class="math inline">\(N(A)\neq\emptyset\)</span>, esto contradice el hecho que <span class="math inline">\(rank(A)=dim(C(A^T))=dim(C(A))=n\)</span>. Ahora, si <span class="math inline">\(A\)</span> tiene todos los autovalores diferentes de cero entonces <span class="math inline">\(A\)</span> es invertible, por lo tanto <span class="math inline">\(rank(A)=n\)</span>.</p>
 <ul>
 <li>Si <span class="math inline">\(A\)</span> una matriz de <span class="math inline">\(m\times n\)</span>, con <span class="math inline">\(m&gt;n\)</span> entonces <span class="math inline">\(A^TA\)</span> es invertible.</li>

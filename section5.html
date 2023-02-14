@@ -106,7 +106,7 @@ ul.task-list li input[type="checkbox"] {
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./section4.html">
- <span class="menu-text">$ subespacios principales$</span></a>
+ <span class="menu-text">Subespacios principales de una matriz</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link active" href="./section5.html" aria-current="page">
@@ -149,7 +149,7 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Sea <span class="math inline">\(A\)</span> una matriz de <span class="math inline">\(m\times n\)</span> y <span class="math inline">\(b\)</span> un vector de <span class="math inline">\(\mathbb{R}^m\)</span>. El problema de mínimos cuadrados es encontrar <span class="math inline">\(\overline{x}\in \mathbb{R}^n\)</span> tal que <span class="math display">\[mim_{\overline{x}}\|A\overline{x}-y\|.\]</span> Para encontrar esto podemos usar el teorema de la proyección ortogonal. Sea <span class="math inline">\(y\in \mathbb{R}^m\)</span> y <span class="math inline">\(N(A^T)\)</span> el espacio nulo de <span class="math inline">\(A^T\)</span> y <span class="math inline">\(C(A)\)</span> el espacio columna de <span class="math inline">\(A\)</span>. Entonces</p>
+<p>Sea <span class="math inline">\(A\)</span> una matriz de <span class="math inline">\(m\times n\)</span> y <span class="math inline">\(b\)</span> un vector de <span class="math inline">\(\mathbb{R}^m\)</span>. El problema de mínimos cuadrados es encontrar <span class="math inline">\(\overline{x}\in \mathbb{R}^n\)</span> tal que <span class="math display">\[mim_{\overline{x}}\|A\overline{x}-y\|_2.\]</span> Para encontrar esto podemos usar el teorema de la proyección ortogonal. Sea <span class="math inline">\(y\in \mathbb{R}^m\)</span> y <span class="math inline">\(N(A^T)\)</span> el espacio nulo de <span class="math inline">\(A^T\)</span> y <span class="math inline">\(C(A)\)</span> el espacio columna de <span class="math inline">\(A\)</span>. Entonces</p>
 <p>Sea <span class="math inline">\(y\in \mathbb{R}^m\)</span> luego <span class="math inline">\(y=y_1+y_2\)</span> con <span class="math inline">\(y_1\in N(A^T)\)</span> y <span class="math inline">\(y_2\in C(A)\)</span> entonces</p>
 <p><span class="math display">\[A^Ty=A^T(y_1+y_2)=A^Ty_1+A^Ty_2=A^Ty_2,\]</span></p>
 <p>como <span class="math inline">\(y_2\in C(A)\)</span> entonces existe un <span class="math inline">\(\overline{x}\)</span> tal que <span class="math display">\[A\overline{x}=y_2,\]</span> sustituyendo en la primera ecuación tenemos que <span class="math display">\[A^TA\overline{x}=A^Ty.\]</span></p>
@@ -161,7 +161,7 @@ x_1+x_2=3\end{cases},\]</span> este sistema lo podemos escribir en forma matrici
 <p><span class="math display">\[\begin{bmatrix}1&amp;1\\1&amp;-1\\1&amp;1\end{bmatrix}\begin{bmatrix}x_1\\x_2\end{bmatrix}=\begin{bmatrix}2\\1\\3\end{bmatrix}.\]</span></p>
 <p>Note que esto lo podemos escribir como</p>
 <p><span class="math display">\[\begin{bmatrix}1\\1\\1\end{bmatrix}x_1+\begin{bmatrix}1\\-1\\1\end{bmatrix}x_2=\begin{bmatrix}2\\1\\3\end{bmatrix}.\]</span></p>
-<p>De esta forma lo que queremos es encontrar la proyección del vertor <span class="math inline">\(\begin{bmatrix}2\\1\\3\end{bmatrix}\)</span> en el generado por el conjunto de vectores <span class="math display">\[\Big\{\begin{bmatrix}1\\1\\1\end{bmatrix},\begin{bmatrix}1\\-1\\1\end{bmatrix}\Big\}\]</span></p>
+<p>De esta forma lo que queremos es encontrar la proyección del vertor <span class="math inline">\(\begin{bmatrix}2\\1\\3\end{bmatrix}\)</span> en el generado por el conjunto de vectores <span class="math display">\[\Big\{\begin{bmatrix}1\\1\\1\end{bmatrix},\begin{bmatrix}1\\-1\\1\end{bmatrix}\Big\},\]</span></p>
 <p>Gráficamente lo podemos interpretar como muestra la siguiente gráfica</p>
 
 

@@ -1,0 +1,142 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "nuevo",
+    "section": "",
+    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "Problemas que vamos a estudiar en el curso de Algebra Lineal # Espacios subespacios vectoriales"
+  },
+  {
+    "objectID": "about.html#multiplicación-usando-columnas-ax",
+    "href": "about.html#multiplicación-usando-columnas-ax",
+    "title": "About",
+    "section": "Multiplicación usando columnas \\(Ax\\)",
+    "text": "Multiplicación usando columnas \\(Ax\\)"
+  },
+  {
+    "objectID": "about.html#cuatro-espacios-vectoriales-fundamentales",
+    "href": "about.html#cuatro-espacios-vectoriales-fundamentales",
+    "title": "About",
+    "section": "Cuatro espacios vectoriales fundamentales",
+    "text": "Cuatro espacios vectoriales fundamentales"
+  },
+  {
+    "objectID": "about.html#norma-de-vectores-matrices-y-funciones",
+    "href": "about.html#norma-de-vectores-matrices-y-funciones",
+    "title": "About",
+    "section": "Norma de vectores, matrices y funciones",
+    "text": "Norma de vectores, matrices y funciones\n\nk-mean clustering"
+  },
+  {
+    "objectID": "about.html#pca",
+    "href": "about.html#pca",
+    "title": "About",
+    "section": "PCA",
+    "text": "PCA"
+  },
+  {
+    "objectID": "section1.html",
+    "href": "section1.html",
+    "title": " Introducción a la álgebra lineal Computacional",
+    "section": "",
+    "text": "Existen tres tipos de variables numéricas float, complex y int\n\nfloat(5.0)\n\n5.0\n\n\n\nint(5.8)\n\n5\n\n\n\ncomplex(1,2)\n\n(1+2j)\n\n\n\n\n\n\n\n\nSimbolos\nOperaciones\n\n\n\n\n+\nsuma\n\n\n*\nMultiplicación\n\n\n/\nDivisión de numeros flotantes\n\n\n//\nDivisión de números enteros\n\n\n%\nMódulo\n\n\n**\nExponencial\n\n\n\n\nprint(5%3)\n\n2\n\n\n\n(4.0+5.3j).imag\n\n5.3\n\n\nPara las operaciones matemáticas usted debe importar la libreria math la cual la debe importar con\n\nimport math as ma\n\n\nma.sqrt(4.0)\n\n2.0\n\n\nAqui podemos generar variables de la siguiente forma\n\na=2.0+6.2j\n\n\ntype(a) # con este comando puede usted ver que tipo de variable esta guardada\n\ncomplex\n\n\nPodemos comprara variables y numéros con los siguientes comando\n\n\n\nSimbolos\nOperaciones\n\n\n\n\n==\nigual\n\n\n!=\ndiferente\n\n\n<\nmenor que\n\n\n<=\nmenor igual que\n\n\n\\(>\\)\nmayor que\n\n\n\\(>=\\)\nmayor e igual que\n\n\n\n\n4==4.0\n\nTrue\n\n\n\n\n\nLos operadores lógicos en Python son >and\n>or >not\nQue diferencia existe con la siguiente sintaxis >from math import *\ny\n\nimport math"
+  },
+  {
+    "objectID": "section1.html#ejemplos-adicionales",
+    "href": "section1.html#ejemplos-adicionales",
+    "title": " Introducción a la álgebra lineal Computacional",
+    "section": "Ejemplos adicionales",
+    "text": "Ejemplos adicionales\n\nlista_de_colores = ['rojo', 'verde', 'azul', 'blanco']\nfor color in lista_de_colores:\n    for letra in color:\n        print(letra,end='.')\n    print()\n\nr.o.j.o.\nv.e.r.d.e.\na.z.u.l.\nb.l.a.n.c.o."
+  },
+  {
+    "objectID": "section1.html#if",
+    "href": "section1.html#if",
+    "title": " Introducción a la álgebra lineal Computacional",
+    "section": "If",
+    "text": "If\nLa sintanxis del es\n\nif < logical expression 1 >:\n\n\n<statements 1 >\n\n\nelif < logical expression 2 >:\n\n\n<statements 2 >\n\n\n…\n\n\nelse:\n\n\n\n\nLa sintaxis de if es similar a la de otros lenguajes de programación\n\nfor x in range(10):\n    if x <= 3:\n        print(x, 'is less than or equal to three ')\n    elif x ==5 or x ==6:\n        print(x, 'is greater than five ')\n    else:\n        print(x, 'must be four or five , then ')\n       \n\n0 is less than or equal to three \n1 is less than or equal to three \n2 is less than or equal to three \n3 is less than or equal to three \n4 must be four or five , then \n5 is greater than five \n6 is greater than five \n7 must be four or five , then \n8 must be four or five , then \n9 must be four or five , then"
+  },
+  {
+    "objectID": "section1.html#continue",
+    "href": "section1.html#continue",
+    "title": " Introducción a la álgebra lineal Computacional",
+    "section": "continue",
+    "text": "continue\nContinue es un estamento similar a break, pero en lugar de salir del ciclo que esta contenido en el bucle, este fuerza a la nueva iteración del bucle sin completar las intrucciones del bloque de la actual iteración\n\nfor i in range(1, 11):\n    if i % 2:\n        continue\n    print(i, 'is even!')\n\n2 is even!\n4 is even!\n6 is even!\n8 is even!\n10 is even!"
+  },
+  {
+    "objectID": "section1.html#pass",
+    "href": "section1.html#pass",
+    "title": " Introducción a la álgebra lineal Computacional",
+    "section": "pass",
+    "text": "pass\nEl comando de paso no hace nada. Es útil como un “código auxiliar” para el código que aún no se ha escrito, pero donde una declaración se equipara sintácticamente con los espacios en blanco de Python.\n\nfor i in range(1, 11):\n    if i == 6:\n        pass # do something special if i is 6\n    if not i % 3:\n        print(i, 'is divisible by 3')\n\n3 is divisible by 3\n6 is divisible by 3\n9 is divisible by 3"
+  },
+  {
+    "objectID": "section1.html#definición-de-funciones",
+    "href": "section1.html#definición-de-funciones",
+    "title": " Introducción a la álgebra lineal Computacional",
+    "section": "Definición de funciones",
+    "text": "Definición de funciones\nPara definir una función en Python es necesario tres partes, encabezado, cuerpo y retorno. Para llamar la función debemos usar el encabezado. Ejemplo\n\ndef cuadrado( ):   # encabezado de la función\n    x=8\n    x_cuadrado=x**2 # cuerpo\n    return x_cuadrado #retorno  \n## llamar la función \ns=cuadrado()\nprint(s)\n\n64\n\n\nPuede ser más de un argumetno que se ingresa en la función, ya sea listas, tuplas o string\n\ndef ejemplo(x,a,s):\n    print(x[0],a[1],s)\n    return x[1], s[0]\nx=[1,2.3]\na=(2,5.2,6)\ns='hola'\na,u=ejemplo(x,a,s)\nprint(u)\n\n1 5.2 hola\nh\n\n\nEn phyton es posible pasar los argumentos en desorden de la siguiente forma\n\ndef ejemplo(x, a, s):\n    print(x[0], a[1], s)\n    return\n\n\np = [1, 2.3]\nh = (2, 5.2, 6)\nf = 'hola'\nejemplo(s=f, x=p, a=h)\n\n1 5.2 hola\n\n\nCaundo se quiere haccer una programación modulada, es decir crear varios archivos o fichero, lo cual ayuda a la manotención estas se deben importar\n\nFichero 1 # Fibonacci numbers module\n\n\ndef fib(n): # write Fibonacci series up to n\n\n\na, b = 0, 1\n\n\nwhile a < n:\n\n\n   print(a, end=' ')\n\n\n   a, b = b, a+b\n\n\nprint()\n\n\ndef fib2(n): # return Fibonacci series up to n\n\n\nresult = []\n\n\na, b = 0, 1\n\n\nwhile a < n:\n\n\n   result.append(a)\n\n\n   a, b = b, a+b\n\n\nreturn result"
+  },
+  {
+    "objectID": "section3.html",
+    "href": "section3.html",
+    "title": "Espacios vectoriales",
+    "section": "",
+    "text": "Sea \\(V\\) un conjunto de elementos (estos elementos serán llamados vectores), y \\(F\\) un campo (en nuestro caso serán los números reales o complejos, es llamado un espacio vectorial si satisface los siguientes axiomas\n\nClausuraAdición.Multiplicación.\n\n\n\nSi \\(x,y\\in V\\) entonces existe un único \\(z\\in V\\) tal que \\(x+y=z\\).\nSi \\(a\\in F\\) y \\(x\\in V\\) entonces existe un único \\(z\\in V\\) tal que \\(z=ax\\).\n\n\n\nSi \\(x,y,z \\in V\\) y \\(a\\in F\\)\n\n\\(x+y=y+x\\)\n\\((x+y)+z=x+(y+z)\\)\nExistencia del cero Existe un elemento en \\(V\\) denotado por \\(0_V\\) tal que\n\\(x+0_V=x\\) (note que e muchas veces se tomara por notación \\(0\\) en vez de \\(=_V\\))\nExistencia de opuesto, Para todo \\(x\\in V\\) existe un elemento \\(y\\in V\\) tal que\n\\(x+y=0_V\\). Este elemento sera denotado por \\(-x=y\\)\n\n\n\nSi \\(x,y,z \\in V\\) y \\(a,b\\in F\\)\n\n\\(a(bx)=(ab)x\\)\n\\(a(x+y)=ax+ay\\)\n\\((a+b)x=ax+bx\\)\nPara todo \\(x\\in V\\) tenemos \\(1x=x\\)\n\n\n\n\n\n\n\n\\(\\mathcal{R}̣\\)\n\\(\\mathcal{C}\\)\n\\(\\mathcal{R}^n\\)\n\\(\\mathcal{C}^n\\)\nEl conjunto de todos los vectores ortogonales a un vector dado\nEl conjunto de todas las funciones definidas en \\(\\mathcal{R}\\)\nEl conjunto de todas las funciones continuas en un intervalo dado\nEl conjunto de todas las matrices del mismo tamaño\nEl conjunto de todas las funciones diferenciables en un intervalo dado\nEl conjunto de todas las funciones que satisfacen la ecuación diferencial \\[y''+ay'+by.\\]\n\n\n\nSea \\(V\\) un espacio vectorial y \\(S\\) un subconjunto de \\(V\\), \\(S\\) es un subespacio de \\(V\\), si en si mismo es un espacio vectorial.\n\n\n\n\n\n\nTeorema\n\n\n\nSea \\(S\\) un subconjunto no vació de un espacio vectorial \\(V\\). Si los elementos de \\(S\\) satisfacen los axiomas de clausura entonces \\(S\\) es un subespacio de \\(V\\)\n\n\n\n\n\n\n\n\nDefinición\n\n\n\nSea \\(S\\) un subconjunto no vació de un espacio vectorial \\(V\\), un elemento \\(x\\) de \\(V\\) de la forma: \\[x=\\sum_{i=1}^{k}c_ix_i,\\] en donde \\(x_1,x_2,...,x_k\\) son elementos de \\(S\\) y \\(c_i\\) son escalares, se denomina la combinación lineal de elementos de \\(S\\).\n\n\n\n\n\n\n\n\nTeorema\n\n\n\nEl conjunto \\(span(S)=\\{\\sum_{i=1}^{k}c_ix_i,|c_i\\in F\\}\\) de todos los elementos generados en combinación lineal de \\(S\\) es un subespacio vectorial de \\(V\\)\n\n\n\n\n\n\n\n\nNote\n\n\n\nSi \\(S\\) es un subespacio de \\(V\\) entonces \\(S=span(S)\\). Además, el generado \\(gen(S)=span(S)\\)\n\n\nSupongamos que queremos calcular el \\(span(S)\\) donde \\(S\\{x_1,x_2,...,x_n\\}\\), y \\(x_i\\in\\mathbb{R^n}\\), para esto debemos calcular todas las combinaciones lineales de los elementos de \\(S\\) de la siguinete forma\n\\[span(S)=\\{\\sum_{i=1}^{n}c_ix_i,|c_i\\in\\mathbb{R}\\}\\]\nOtra forma de calcular esta combinación es crear una matriz \\(M\\) con todos los vectores de \\(S\\) y multiplicarla por un vector columna de los coeficientes \\(c_i\\), de esta forma obtenemos un vector columna con todos los elementos de la combinación lineal, esto se puedo expresar como la multiplicación de una matriz por un vector columna.\n\\[span(S)=M\\in\\mathbb{R}c\\]\n\n\n\n\n\n\nDefinición\n\n\n\nSea \\(A\\) una matriz de \\(m\\times n\\), definimos como \\(Im(A)=span\\{y\\in\\mathbb{R^m}|Ax=y\\}\\), note si tomamos \\(x=e_i\\) tenemos donde \\(Ae_i=A_i\\) son las columnas de \\(A\\). Además definimos \\(Ker(A)=\\{x\\in\\mathbb{R^n}|Ax=0\\}\\)."
+  },
+  {
+    "objectID": "ejercicio.html",
+    "href": "ejercicio.html",
+    "title": "Ejercicios",
+    "section": "",
+    "text": "Problemas\n\nEn el espacio vectorial real \\(C(1,e)\\), definimos la función \\(<f,g>=\\int_1^e(\\log x)(f(x)g(x))\\, dx\\)\n\nPruebe que esta función es un producto interno\nSi \\(f(x)=\\sqrt{x}\\), calcular \\(||f||\\)\nHallar el polinomio de primer grado \\(ax+b\\) que sea ortogonal a la función constante \\(f(x)=1\\)\n\nEn el espacio vectorial de todas las funciones polinómicas reales, determinar si \\[<f,g>=\\int_0^1f'(x)g'(x)\\, dx.\\] es o no un producto interno. En el caso que \\(<f,g>\\) no es un producto interno, indicar que axiomas no son respetados y el por que. \\(f'\\) y \\(g'\\) indican derivadas.\nEn espacio vectorial de todos los polinomios reales, con producto interno \\(<x,y>=\\int_0^1x(t)y(t)\\,dt\\), sea \\(x_n=t^n\\) para \\(n=0,1,2,...\\). Demostrar que las funciones\n\n\\[y_0(t)=1,\\quad\\, \\, y_1(t)=\\sqrt{3}(2t-1),\\quad\\,\\,y_2(t)=\\sqrt{5}(6t^2-6t+1)\\]\nforman un conjunto ortogonal que generan el mismo subespacio que \\(\\{x_0,x_1,x_2\\}\\)\n\nSea \\(\\mathbb{R}^n\\) un espacio vectorial, Compruebe o refute si las siguientes relaciones forman un producto interno::\n\n\\(x \\cdot y = \\sum_{i=1}^ne^{2} x_i y_i\\)\n\\(x \\cdot y =x_1y_1 − x_1y_2 − x_2y_1 +\\alpha x_2y_2\\), para \\(n=2\\) y \\(\\alpha \\in \\mathbb{R}\\)\n\\(x \\cdot y = \\sum_{i=1}^{n/2} x_{2i} y_{2i} -\\sum_{i=1}^{n/2} x_{2i-1} y_{2i-1}\\)\n\nDenuestre que si \\(V\\) y \\(W\\) son dos subespacios ortogonales de un espacio vectorial \\(E\\), entonces \\(V\\cap W=0\\)\nEncuentre un vector \\(x\\) ortogonal al espacio de filas de \\(A\\), y un vector \\(y\\) ortogonal al espacio de columnas, y un vector \\(z\\) ortogonal al nulo de \\(A\\): \\[A=\\begin{bmatrix} 1 & 2 & 1 \\\\ 2 & 4 & 3 \\\\ 3 & 6 & 4 \\end{bmatrix}\\]\nMuestre que si \\(x-y\\) es ortogonal a \\(x+y\\), si y solo si \\(||x||=||y||\\)\nSea \\(P\\) un plano en \\(\\mathbb{R}^2\\) con ecuación \\(x+2y-z=0\\). Encuentre un vector unitario perpendicular a \\(P\\).¿Cual es la matriz que tiene el plano \\(P\\) como su espacio nulo?, y cual matriz tiene \\(P\\) como su espacio columna?\nCual de los siguientes estamentos son falsos\n\nSi \\(V\\) es ortogonal a \\(W\\), entonces \\(V^{\\perp}\\) es ortogonal a \\(W^{\\perp}\\)\nSi es ortogonal a \\(W\\), y \\(W\\) es ortogonal a \\(Z\\), entonces \\(V\\) es ortogonal a \\(Z\\)"
+  },
+  {
+    "objectID": "section2.html",
+    "href": "section2.html",
+    "title": " Introducción a la álgebra lineal Computacional",
+    "section": "",
+    "text": "Una de la parte más importante en la programación cientíica son las graficas que podemos producir con nuestros algoritmos. En este aparte daremos una pequeña introducción a este tema usando dos librerias: matplotlib y numpy para importar estas librerías usamos\n\nimport matplotlib.pyplot as plt\nimport  numpy as np\n\n\n\n\nax=[0.,0.5,1.0,1.5,2.0,2.5,3.0]\nby=[0.0,0.25,1.0,2.25,4.0,6.25,9.0]\nplt.plot(ax,by)\nplt.show()\n\n\n\n\n\nimport random\nax, ay = [], []\nfor i in range(100):\n    ax.append(random.random())\n    ay.append(random.random())\nplt.scatter(ax, ay)\nplt.show()\nplt.savefig('plot.png')\n\n\n\n\n<Figure size 432x288 with 0 Axes>\n\n\n\n\n\npara guardas estas gráficas podemos usar los siguientes comando\n\n\nplt.savefig('plot.pdf')\nplt.savefig('plot.eps')\n\n<Figure size 432x288 with 0 Axes>"
+  },
+  {
+    "objectID": "section4.html",
+    "href": "section4.html",
+    "title": "$ subespacios principales$",
+    "section": "",
+    "text": "Una matriz \\(A_{m\\times n}\\) crea cuatro subespacios importantes, como los podemos mostrar en la siguiente figura. (Aquí se puede encontrar màs inforacion del tema)\n\n\n\n4 espacios fundamentales\n\n\nLlamaremos \\(C(A)\\) como el espacio columna de la matriz \\(A\\) y \\(N(A)\\) como el espacio nulo de la matriz de \\(A\\). De aquì podemos observar las siguientes propiedades\n\\[C(A^T)\\perp N(A).\\] Para mostrar esta proiedad debemos mostrar que si \\(x_1\\in C(A^T)\\) y \\(x_2\\in N(A)\\), entonces\n\\[\\langle x_1,x_2\\rangle=x_2^Tx_1=0.\\]\nSabemos que existe un \\(y\\in \\mathbb{R}^m\\), note que \\(y=y_1+y_2\\), donde \\(y_2\\in N(A^T)\\) luego \\(A^Ty=A^ty_1=x_1\\). Ahora tenemos que\n\\[\\langle x_2,x_1\\rangle=(A^Ty)^Tx_2=y^TAx_2=0,\\] por tanto son ortogonales. Con un argumento similar podemos mostrar que \\(C(A)\\perp N(A^T)\\).\nAdemas tenemos la propiedad que \\[dim(C(A))=dim(N(A^T))=r,\\] de esta forma tenemos que \\(dim(N(A))=n-r\\) y \\(dim(N(A^T))=m-r\\).\n\n\n\n\n\n\nDefinición\n\n\n\nSea \\(A\\) una matriz de \\(m\\times n\\), definimos como el \\(rank(A)\\) como el numero máximo de filas o columnas lienalmente independientes de \\(A\\). Note que por la propiedad anterior tenemos que \\(rank(A)=dim(C(A))=dim(N(A^T))\\).\n\n\n\n\n\n\n\n\nDefinición\n\n\n\nSea \\(A\\) una matriz de \\(m\\times n\\), con \\(m>n\\) \\(rank(A)=n\\) diremos que \\(A\\) es una matriz de rango completo.\n\n\nAlgunas propiedades importantes del rank son las siguientes * Si \\(A\\) es una matriz cuadrada entonces \\(rank(A)=n\\) todos autovalores de \\(A\\) son distintos. * Si \\(A\\) es una matriz cuadrada entonces \\(rank(A)=n\\) si y solo si \\(A\\) es invertible.\nPara demostrar la primera vamos a suponer que es falso por tanto 0 es un autovalor luego \\(Ax=0\\), lo que implica que \\(N(A)\\neq\\emptyset\\), esto contradice el hecho que \\(rank(A)=dim(C(A^T))=dim(C(A))=n\\). Ahora, si \\(A\\) tiene todos los autovalores diferentes de cero entonces \\(A\\) es invertible, por lo tanto \\(rank(A)=n\\).\n\nSi \\(A\\) una matriz de \\(m\\times n\\), con \\(m>n\\) entonces \\(A^TA\\) es invertible.\n\nSea \\(x\\in \\mathbb{R}^n\\) entonces \\(Ax=y\\neq 0\\) puesto que \\(rank(A)=n,\\) entonces \\(y\\notin N(A^T)\\). De esta forma existe un \\(x\\neq 0\\) tal que \\(x=A^Ty\\) y que \\(x\\in C(A^T)\\) y \\(x\\neq 0\\). Para completar la demostración debemos debemos mostrar que \\(dim(Im(A^TA))=n\\).\nPara esto vamos a usar la propiedad que \\(rank(A)=n\\) y \\(rank(A^T)=n\\). Entonces tenemos que \\(rank(A^TA)=n\\) y por lo tanto \\(A^TA\\) es invertible."
+  },
+  {
+    "objectID": "section4.html#definición",
+    "href": "section4.html#definición",
+    "title": "Untitled",
+    "section": "Definición",
+    "text": "Definición\nSea \\(A\\) una matriz de \\(m\\times n\\), definimos como el \\(rank(A)\\) como el numero máximo de filas o columnas lienalmente independientes de \\(A\\). Note que por la propiedad anterior tenemos que \\(rank(A)=dim(C(A))=dim(N(A^T))\\).\n:::"
+  },
+  {
+    "objectID": "section6.html",
+    "href": "section6.html",
+    "title": "Factorización QR",
+    "section": "",
+    "text": "El método de Gram schmid consiste en tomar un conjunto de vectores linealmete independientes y construir un conjunto de vectores ortogonales a partir de ellos. Para ello se toma el primer vector y se normaliza, luego se toma el segundo vector y se le resta la proyección de este sobre el primero, luego se normaliza y se repite el proceso con el tercer vector y así sucesivamente. El resultado es un conjunto de vectores ortogonales que son linealmente independientes.\nEl método de Gram schmid es un método iterativo que se puede expresar de la siguiente manera: sea \\(A_1, A_2, \\dots, A_n\\) un conjunto de vectores linealmente independientes, entonces se define el conjunto de vectores ortogonales \\(u_1, u_2, \\dots, u_n\\) de la siguiente manera: \\[u_1 = \\frac{A_1}{\\|A_1\\|},\\] \\[\\overline{u}_2 = A_2 - \\langle u_1, A_2 \\rangle u_1,\\] \\[u_2=\\|\\overline{u}_2 \\|,\\] \\[\\overline{u}_3 = A_3 -\\sum_{j=1}^2 \\langle u_j, A_3 \\rangle u_j, \\] \\[u_3=\\|\\overline{u}_3 \\|,\\] \\[\\vdots\\] \\[\\overline{u}_n = A_n  -\\sum_{j=1}^{n-1} \\langle u_j, A_n \\rangle u_j, \\]\n\\[u_n=\\|\\overline{u}_n \\|.\\]\nAhora si escribimos una matriz \\(A\\) de \\(m\\times n\\), con \\(m>n\\) formada por los vectores \\(A_1, A_2, \\dots, A_n\\) como columnas. Note que $rank(A)=n vamos a reproducir el proceso anterior, pero ahora en forma matricial.\n\\[y_1=A_1, \\text{ y } q_1=\\frac{y_1}{\\|y_1\\|},\\] ahora para encontrar el segundo vector \\(y_2\\) se tiene que: \\[y_2=A_2-q_1(q_1^TA_2), \\text{ y } q_1=\\frac{y_1}{\\|y_1\\|},\\]\ny así sucesivamente hasta encontrar \\(y_n\\) y \\(q_n\\). \\[y_n=A_n-\\sum_{j=1}^{n-1} q_j(q_j^TA_n), \\text{ y } q_n=\\frac{y_n}{\\|y_n\\|}.\\]\nNote que de esta forma podemos escribir \\(A\\) como:\n\\[A_1=r_{11}q_1,\\] \\[A_2=r_{21}q_1+r_{22}q_2,\\] y \\[ A_n=r_{n1}q_1+r_{n2}q_2+r_{n3}q_3+\\dots+r_{nn}q_n.\\]\nDe esta forma podemos escribir \\(A\\) como el producto de dos matrices \\(Q\\) y \\(R\\) donde \\(Q\\) es una matriz ortogonal y \\(R\\) es una matriz triangular superior.\n\\[A=[A_1|A_2|...|A_n]=[q_1|q_2|...|q_n]\\begin{bmatrix}\nr_{11} & r_{12} & ...&r_{1n}\\\\\n& r_{12} & ...&r_{1n}\\\\\n&  &\\ddots&\\vdots\\\\\n& & ...&r_{nn}\\\\\n\\end{bmatrix}\\]\nEste procedimeinto se llama la factorización QR de \\(A\\).\nahora vamos a probar el método con una matriz aleatoria de \\(m\\times n\\) con \\(m>n\\).\nMétodo de Gram-Schmidt modificado\nEl método de Gram-Schmidt modificado es una variación del método de Gram-Schmidt. En este método se toma el primer vector y se normaliza, luego se toma el segundo vector y se le resta la proyección de este sobre el primero, luego se normaliza y se repite el proceso con el tercer vector y así sucesivamente. El resultado es un conjunto de vectores ortogonales que son linealmente independientes. El método de Gram-Schmidt modificado es un método iterativo que se puede expresar de la siguiente manera:"
+  },
+  {
+    "objectID": "section6.html#pregunta",
+    "href": "section6.html#pregunta",
+    "title": "Factorización QR",
+    "section": "Pregunta",
+    "text": "Pregunta\n¿Qué podemos decir de las filas de la matriz de \\(Q\\) si \\(A_{n\\times m}\\) con \\(n>m\\)? ¿ De los productos \\(Q^tQ\\) y \\(QQ^T\\)?"
+  },
+  {
+    "objectID": "section5.html",
+    "href": "section5.html",
+    "title": "Minímos cuadrados 1",
+    "section": "",
+    "text": "Sea \\(A\\) una matriz de \\(m\\times n\\) y \\(b\\) un vector de \\(\\mathbb{R}^m\\). El problema de mínimos cuadrados es encontrar \\(\\overline{x}\\in \\mathbb{R}^n\\) tal que \\[mim_{\\overline{x}}\\|A\\overline{x}-y\\|.\\] Para encontrar esto podemos usar el teorema de la proyección ortogonal. Sea \\(y\\in \\mathbb{R}^m\\) y \\(N(A^T)\\) el espacio nulo de \\(A^T\\) y \\(C(A)\\) el espacio columna de \\(A\\). Entonces\nSea \\(y\\in \\mathbb{R}^m\\) luego \\(y=y_1+y_2\\) con \\(y_1\\in N(A^T)\\) y \\(y_2\\in C(A)\\) entonces\n\\[A^Ty=A^T(y_1+y_2)=A^Ty_1+A^Ty_2=A^Ty_2,\\]\ncomo \\(y_2\\in C(A)\\) entonces existe un \\(\\overline{x}\\) tal que \\[A\\overline{x}=y_2,\\] sustituyendo en la primera ecuación tenemos que \\[A^TA\\overline{x}=A^Ty.\\]\nComo \\(A^TA\\) es simétrica y e invertible tenemos que \\[\\overline{x}=(A^TA)^{-1}A^T y.\\]\nEjemplo\nSupongamos que tenemos un sistema de tres ecuaciones y dos incognitas como el siguiente \\[\\begin{cases}x_1+x_2=2\\\\\nx_1-x_2=1\\\\\nx_1+x_2=3\\end{cases},\\] este sistema lo podemos escribir en forma matricial \\(Ax=b\\) de la siguiente forma\n\\[\\begin{bmatrix}1&1\\\\1&-1\\\\1&1\\end{bmatrix}\\begin{bmatrix}x_1\\\\x_2\\end{bmatrix}=\\begin{bmatrix}2\\\\1\\\\3\\end{bmatrix}.\\]\nNote que esto lo podemos escribir como\n\\[\\begin{bmatrix}1\\\\1\\\\1\\end{bmatrix}x_1+\\begin{bmatrix}1\\\\-1\\\\1\\end{bmatrix}x_2=\\begin{bmatrix}2\\\\1\\\\3\\end{bmatrix}.\\]\nDe esta forma lo que queremos es encontrar la proyección del vertor \\(\\begin{bmatrix}2\\\\1\\\\3\\end{bmatrix}\\) en el generado por el conjunto de vectores \\[\\Big\\{\\begin{bmatrix}1\\\\1\\\\1\\end{bmatrix},\\begin{bmatrix}1\\\\-1\\\\1\\end{bmatrix}\\Big\\}\\]\nGráficamente lo podemos interpretar como muestra la siguiente gráfica"
+  }
+]

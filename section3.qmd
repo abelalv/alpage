@@ -1,0 +1,128 @@
+---
+title: "Espacios vectoriales"
+format: html
+---
+
+# Espacios vectoriales 
+
+
+
+Sea $V$ un conjunto de elementos (estos elementos serán llamados vectores), y 
+ $F$ un campo (en nuestro caso serán los números reales o complejos, es llamado un espacio vectorial si satisface los siguientes axiomas
+
+
+::: {.panel-tabset group="Axiomas de un espacio vectorial"}
+
+## Clausura
+a.  Si $x,y\in V$ entonces existe un único $z\in V$ tal que $x+y=z$.
+
+b. Si $a\in F$ y $x\in V$ entonces existe un único $z\in V$ tal que $z=ax$.
+
+## Adición.
+Si $x,y,z \in V$ y $a\in F$
+
+a.   $x+y=y+x$
+
+b.  $(x+y)+z=x+(y+z)$
+
+c.  Existencia del cero Existe un elemento en $V$ denotado por $0_V$ tal que 
+
+     $x+0_V=x$ (note que e muchas veces se tomara por notación $0$ en vez de $=_V$)
+  
+d. Existencia de opuesto, Para todo $x\in V$ existe un elemento $y\in V$ tal que 
+
+     $x+y=0_V$. Este elemento sera denotado por $-x=y$
+
+## Multiplicación.
+Si $x,y,z \in V$ y $a,b\in F$
+    
+a.   $a(bx)=(ab)x$
+    
+b.   $a(x+y)=ax+ay$
+    
+c.   $(a+b)x=ax+bx$
+    
+d.   Para todo $x\in V$ tenemos $1x=x$ 
+
+::: 
+## Ejemplos
+
+a.  $\mathcal{R}̣$
+  
+b.  $\mathcal{C}$
+
+c. $\mathcal{R}^n$
+  
+d. $\mathcal{C}^n$
+  
+e. El conjunto de todos los vectores ortogonales a un vector dado
+  
+f.   El conjunto de todas las funciones definidas en $\mathcal{R}$
+  
+ g.  El conjunto de todas las funciones continuas en un intervalo dado
+  
+h.   El conjunto de todas las matrices del mismo tamaño
+  
+i.   El conjunto de todas las funciones diferenciables en un intervalo dado
+  
+j.   El conjunto de todas las funciones que satisfacen la ecuación diferencial 
+  $$y''+ay'+by.$$
+
+### Subespacios de un espacio vectorial 
+Sea $V$ un espacio vectorial y $S$ un subconjunto de $V$, $S$ es un subespacio de $V$, si en si mismo es un espacio vectorial. 
+
+
+
+::: {.callout-important icon=false}
+
+## Teorema
+
+ Sea $S$ un subconjunto no vació  de un espacio vectorial $V$. Si los elementos de $S$ satisfacen los axiomas de clausura entonces $S$ es un subespacio de $V$
+:::
+
+
+
+::: {.callout-tip icon=false}
+
+## Definición
+
+ Sea $S$ un subconjunto no vació de un espacio vectorial $V$, un elemento $x$ de $V$ de la forma:
+ $$x=\sum_{i=1}^{k}c_ix_i,$$
+ en donde $x_1,x_2,...,x_k$ son elementos de $S$ y $c_i$ son escalares, se denomina la combinación lineal de elementos de $S$.
+
+:::
+
+
+::: {.callout-important icon=false}
+
+## Teorema
+
+ El conjunto $span(S)=\{\sum_{i=1}^{k}c_ix_i,|c_i\in F\}$ de todos los elementos generados en combinación lineal de $S$ es un subespacio vectorial de $V$
+:::
+
+:::{.callout-note}
+Si $S$ es un subespacio de $V$ entonces $S=span(S)$. Además, el generado $gen(S)=span(S)$
+:::
+
+
+Supongamos que queremos calcular el $span(S)$ donde $S\{x_1,x_2,...,x_n\}$, y $x_i\in\mathbb{R^n}$, para esto debemos calcular todas las combinaciones lineales de los elementos de $S$ de la siguinete forma 
+
+$$span(S)=\{\sum_{i=1}^{n}c_ix_i,|c_i\in\mathbb{R}\}$$
+
+Otra forma de calcular esta combinación es crear una matriz $M$ con todos los vectores de $S$ y multiplicarla por un vector columna de los coeficientes $c_i$, de esta forma obtenemos un vector columna con todos los elementos de la combinación lineal, esto se puedo expresar como la multiplicación de una matriz por un vector columna.
+
+$$span(S)=M\in\mathbb{R}c$$
+
+
+::: {.callout-tip icon=false}
+
+## Definición
+
+Sea $A$ una matriz de $m\times n$, definimos como $Im(A)=span\{y\in\mathbb{R^m}|Ax=y\}$, note si tomamos $x=e_i$ tenemos donde $Ae_i=A_i$ son las columnas de $A$. Además definimos $Ker(A)=\{x\in\mathbb{R^n}|Ax=0\}$.
+
+:::
+
+
+
+
+

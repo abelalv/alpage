@@ -1,0 +1,47 @@
+---
+title: "About"
+---
+
+
+Problemas que vamos a estudiar en el curso de Algebra Lineal
+# Espacios subespacios vectoriales
+
+# Combinación lineal de vectores
+## Multiplicación usando columnas $Ax$
+# Transformaciones lineales, matrices, Teorema fundamental del álgebra
+
+## Cuatro espacios vectoriales fundamentales
+
+# Producto punto
+## Norma de vectores, matrices y funciones 
+
+### k-mean clustering
+
+# Espacios ortogonales y matrices ortogonales
+
+# Eigenvalores y eigenvectores
+
+# Simetrica definida positiva
+
+
+# Normas y distancias de un espacio vectorial
+# Normas matriciales 
+
+# SVD
+
+## PCA
+
+# Cociente de Rayleigh
+
+# Factorizacion de Matrices y Tensores
+
+# Minimos Cuadrados cuatro caminos
+# Tres bases del espacio columna 
+# Algebra lineal aleatoria
+
+
+
+# Problemas de algebra lineal 
+Aqui se estudiaran los siguientes problemas:
+$Ax=b$ $Ax=\lambda x$ $Av=\sigma u$ Minimizar $||Ax||^2/||x||$, factorizar $A$
+

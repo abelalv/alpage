@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introducción a la álgebra lineal Computacional - Apuntes</title>
+<title>Introducción a la álgebra lineal Computacional - Regresión líneal 3</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,6 +59,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -80,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page">
+    <a class="nav-link" href="./index.html">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -120,7 +121,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Factorización QR</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./section7.html">
+    <a class="nav-link active" href="./section7.html" aria-current="page">
  <span class="menu-text">Regresión líneal 3</span></a>
   </li>  
 </ul>
@@ -141,7 +142,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Apuntes</h1>
+<h1 class="title">Regresión líneal 3</h1>
 </div>
 
 
@@ -156,7 +157,13 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Este block encontraras algunos apuntes de la clase de algebra lineal computacional</p>
+<p>Sea los puntos <span class="math inline">\(x_0=2.0\)</span>, <span class="math inline">\(x_1=1.2\)</span>,…,<span class="math inline">\(x_{20}=4.0\)</span>, puntos igualmente espaciados entre el intervalo <span class="math inline">\([2,4]\)</span> y sea el conjunto <span class="math inline">\(y_i=1+x_i+x_1^2+\cdots+x_i^{10}\)</span> para <span class="math inline">\(0\leq i\leq 10\)</span>. Obviamente el polinomio que que une a estos puntos es <span class="math inline">\(P(x)=1+x+x^2+\cdots+x^{10}\)</span>. Supongamos que no conocemos el polinomio <span class="math inline">\(P(x)\)</span>, y lo queremos encontrar, de esta forma podemos decir que <span class="math display">\[P(x)=c_0+c_1x+\cdots+c_{10}x^{10},\]</span> de esta forma podemos plantear el sistemas de ecuaciones</p>
+<p><span class="math display">\[\begin{pmatrix}
+1&amp;x_0&amp;x_0^2 &amp;  &amp; x^{10}_{0}\\
+\vdots&amp;\vdots &amp; \vdots &amp; &amp; \vdots\\
+1&amp;x_{10}&amp;x_{10}^2 &amp;  &amp; x^{10}_{20}
+\end{pmatrix}\begin{pmatrix}c_0\\\vdots\\c_{10}\end{pmatrix}=\begin{pmatrix}y_0\\\vdots\\y_{20}\end{pmatrix}\]</span></p>
+<p>Si resolvemos este sistema usando el método de ecuación normal. ¿Cuál es el error cometido? ¿Es una buena aproximación? REcuerde que la solución exacta es <span class="math inline">\(c_i=1\)</span> para todo <span class="math inline">\(i\)</span>.</p>
 
 
 

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introducción a la álgebra lineal Computacional - Apuntes</title>
+<title>Introducción a la álgebra lineal Computacional - Subespacios principales de una matriz</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -59,6 +59,7 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -80,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./index.html" aria-current="page">
+    <a class="nav-link" href="./index.html">
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
@@ -104,7 +105,7 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Ejercicios</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./section4.html">
+    <a class="nav-link active" href="./section4.html" aria-current="page">
  <span class="menu-text">Subespacios principales de una matriz</span></a>
   </li>  
   <li class="nav-item">
@@ -112,16 +113,8 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text">Minímos cuadrados 1</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./section6a.html">
- <span class="menu-text">Regeresión lineal 2</span></a>
-  </li>  
-  <li class="nav-item">
     <a class="nav-link" href="./section6.html">
  <span class="menu-text">Factorización QR</span></a>
-  </li>  
-  <li class="nav-item">
-    <a class="nav-link" href="./section7.html">
- <span class="menu-text">Regresión líneal 3</span></a>
   </li>  
 </ul>
               <div id="quarto-search" class="" title="Search"></div>
@@ -141,7 +134,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Apuntes</h1>
+<h1 class="title">Subespacios principales de una matriz</h1>
 </div>
 
 
@@ -156,7 +149,57 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>Este block encontraras algunos apuntes de la clase de algebra lineal computacional</p>
+<p>Una matriz <span class="math inline">\(A_{m\times n}\)</span> crea cuatro subespacios importantes, como los podemos mostrar en la siguiente figura. (<a href="http://alejandrosanchezyali.blogspot.com/2018/05/los-cuatro-espacios-fundamentales-de.html">Aquí se puede encontrar màs inforacion del tema</a>)</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/espacios.png" class="img-fluid figure-img" width="600"></p>
+<p></p><figcaption class="figure-caption">4 espacios fundamentales</figcaption><p></p>
+</figure>
+</div>
+<p>Llamaremos <span class="math inline">\(C(A)\)</span> como el espacio columna de la matriz <span class="math inline">\(A\)</span> y <span class="math inline">\(N(A)\)</span> como el espacio nulo de la matriz de <span class="math inline">\(A\)</span>. De aquì podemos observar las siguientes propiedades</p>
+<p><span class="math display">\[C(A^T)\perp N(A).\]</span> Para mostrar esta proiedad debemos mostrar que si <span class="math inline">\(x_1\in C(A^T)\)</span> y <span class="math inline">\(x_2\in N(A)\)</span>, entonces</p>
+<p><span class="math display">\[\langle x_1,x_2\rangle=x_2^Tx_1=0.\]</span></p>
+<p>Sabemos que existe un <span class="math inline">\(y\in \mathbb{R}^m\)</span>, note que lo podemos descomponer en <span class="math inline">\(y=y_1+y_2\)</span>, donde <span class="math inline">\(y_1\in C(A)\)</span> y <span class="math inline">\(y_2\in N(A^T)\)</span> luego <span class="math display">\[A^Ty=A^T(y_1+y_2)=A^ty_1=x_1.\]</span></p>
+<p>Ahora tenemos que</p>
+<p><span class="math display">\[\langle x_2,x_1\rangle=(A^Ty)^Tx_2=y^TAx_2=0,\]</span> por tanto son ortogonales. Con un argumento similar podemos mostrar que <span class="math inline">\(C(A)\perp N(A^T)\)</span>.</p>
+<p>Ademas tenemos la propiedad que <span class="math display">\[dim(C(A))=dim(N(A^T))=r,\]</span> de esta forma tenemos que <span class="math inline">\(dim(N(A))=n-r\)</span> y <span class="math inline">\(dim(N(A^T))=m-r\)</span>.</p>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definición
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sea <span class="math inline">\(A\)</span> una matriz de <span class="math inline">\(m\times n\)</span>, definimos como el <span class="math inline">\(rank(A)\)</span> como el numero máximo de filas o columnas lienalmente independientes de <span class="math inline">\(A\)</span>. Note que por la propiedad anterior tenemos que <span class="math inline">\(rank(A)=dim(C(A))=dim(N(A^T))\)</span>.</p>
+</div>
+</div>
+<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+Definición
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Sea <span class="math inline">\(A\)</span> una matriz de <span class="math inline">\(m\times n\)</span>, con <span class="math inline">\(m&gt;n\)</span> <span class="math inline">\(rank(A)=n\)</span> diremos que <span class="math inline">\(A\)</span> es una matriz de rango completo.</p>
+</div>
+</div>
+<p>Algunas propiedades importantes del rank son las siguientes</p>
+<ul>
+<li><p>Si <span class="math inline">\(A\)</span> es una matriz cuadrada y <span class="math inline">\(rank(A)=n\)</span> entonces todos autovalores de <span class="math inline">\(A\)</span> son distintos de cero.</p></li>
+<li><p>Si <span class="math inline">\(A\)</span> es una matriz cuadrada entonces <span class="math inline">\(rank(A)=n\)</span> si y solo si <span class="math inline">\(A\)</span> es invertible.</p></li>
+</ul>
+<p>Para demostrar la primera vamos a suponer que es falso por tanto 0 es un autovalor luego <span class="math inline">\(Ax=0\)</span>, lo que implica que <span class="math inline">\(N(A)\neq\emptyset\)</span>, esto contradice el hecho que <span class="math inline">\(rank(A)=dim(C(A^T))=dim(C(A))=n\)</span>. Ahora, si <span class="math inline">\(A\)</span> tiene todos los autovalores diferentes de cero entonces <span class="math inline">\(A\)</span> es invertible, por lo tanto <span class="math inline">\(rank(A)=n\)</span>.</p>
+<ul>
+<li>Si <span class="math inline">\(A\)</span> una matriz de <span class="math inline">\(m\times n\)</span>, con <span class="math inline">\(m&gt;n\)</span> entonces <span class="math inline">\(A^TA\)</span> es invertible.</li>
+</ul>
+<p>Sea <span class="math inline">\(x\in \mathbb{R}^n\)</span> entonces <span class="math inline">\(Ax=y\neq 0\)</span> puesto que <span class="math inline">\(rank(A)=n,\)</span> entonces <span class="math inline">\(y\notin N(A^T)\)</span>. De esta forma existe un <span class="math inline">\(x\neq 0\)</span> tal que <span class="math inline">\(x=A^Ty\)</span> y que <span class="math inline">\(x\in C(A^T)\)</span> y <span class="math inline">\(x\neq 0\)</span>. Para completar la demostración debemos debemos mostrar que <span class="math inline">\(dim(Im(A^TA))=n\)</span>.</p>
+<p>Para esto vamos a usar la propiedad que <span class="math inline">\(rank(A)=n\)</span> y <span class="math inline">\(rank(A^T)=n\)</span>. Entonces tenemos que <span class="math inline">\(rank(A^TA)=n\)</span> y por lo tanto <span class="math inline">\(A^TA\)</span> es invertible.</p>
 
 
 
